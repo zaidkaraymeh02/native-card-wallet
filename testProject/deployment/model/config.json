@@ -1,0 +1,17 @@
+{
+  "Configuration": {
+    "DatabaseName": "default",
+    "DatabasePassword": "",
+    "DatabaseType": "HSQLDB",
+    "DatabaseHost": "",
+    "DatabaseUserName": "",
+    "DatabaseUseIntegratedSecurity": "False",
+    "ApplicationRootUrl": "http://localhost:8080/",
+    "ScheduledEventExecution": "None"
+  },
+  "Constants": {
+    "Atlas_NativeMobile_Content.Atlas_Native_Content_Version": "3.0.1",
+    "FeedbackModule.LocalStorageKey": "mxfeedback-form-data"
+  },
+  "AdminPassword": null
+}

@@ -1,0 +1,25 @@
+{
+    "version": "4.9.4",
+    "watched": [
+        {
+            "triggers": [],
+            "path": "C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules"
+        },
+        {
+            "triggers": [],
+            "path": "C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/themesource"
+        },
+        {
+            "triggers": [],
+            "path": "C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native"
+        },
+        {
+            "triggers": [],
+            "path": "C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/theme"
+        },
+        {
+            "triggers": [],
+            "path": "C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/javascriptsource"
+        }
+    ]
+}

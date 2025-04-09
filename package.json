@@ -1,0 +1,41 @@
+{
+  "name": "nativecardwallet",
+  "widgetName": "NativeCardWallet",
+  "version": "1.0.0",
+  "description": "This widget will handle displaying a list of cards with animations similar what Apple did with Apple Wallet",
+  "copyright": "@ Khaleeji Bank 2025",
+  "author": "Zaid Karaymeh",
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "Khaleeji",
+  "config": {
+    "projectPath": "./testProject"
+  },
+  "packagePath": "khaleeji",
+  "scripts": {
+    "start": "pluggable-widgets-tools start:native",
+    "build": "pluggable-widgets-tools build:native",
+    "lint": "pluggable-widgets-tools lint",
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:native"
+  },
+  "devDependencies": {
+    "@mendix/pluggable-widgets-tools": "^10.15.0"
+  },
+  "dependencies": {
+    "react-native-fast-image": "^8.6.3",
+    "react-native-gesture-handler": "^2.14.0",
+    "react-native-reanimated": "^3.6.2",
+    "react-native-reanimated-alias": "npm:react-native-reanimated@^3.6.2"
+  },
+  "resolutions": {
+    "react": "^18.2.0",
+    "react-native": "0.72.7"
+  },
+  "overrides": {
+    "react": "^18.2.0",
+    "react-native": "0.72.7"
+  }
+}

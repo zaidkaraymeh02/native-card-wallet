@@ -1,0 +1,74 @@
+Initialized native services in: C:\Users\zf_karaymeh\.gradle\native
+Initialized jansi services in: C:\Users\zf_karaymeh\.gradle\native
+The client will now receive all logging from the daemon (pid: 32888). The daemon log file: C:\Users\zf_karaymeh\.gradle\daemon\8.13\daemon-32888.out.log
+Starting 26th build in daemon [uptime: 4 hrs 13 mins 22.982 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 24% of 384 MiB]
+Using 32 worker leases.
+Now considering [C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment, C:\Users\zf_karaymeh\Mendix\KHCB_Retail_Platform-feature_cards\deployment] as hierarchies to watch
+Watching the file system is configured to be enabled if available
+File system watching is active
+Starting Build
+Settings evaluated using settings file 'C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment\settings.gradle'.
+Projects loaded. Root project using build file 'C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment\build.gradle'.
+Included projects: [root project 'deployment']
+
+> Configure project :
+Evaluating root project 'deployment' using build file 'C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment\build.gradle'.
+All projects evaluated.
+Task name matched 'clean-excluded-jars'
+Task name matched 'deploy'
+Selected primary task 'clean-excluded-jars' from project :
+Selected primary task 'deploy' from project :
+Tasks to be executed: [task ':clean-excluded-jars', task ':copyDeploymentArtifacts', task ':copyLibs', task ':copyResources', task ':unzipDataSnapshot', task ':deploy']
+Tasks that were excluded: []
+Resolve mutations for :clean-excluded-jars (Thread[Execution worker,5,main]) started.
+:clean-excluded-jars (Thread[Execution worker,5,main]) started.
+destroyer locations for task group 0 (Thread[Execution worker Thread 2,5,main]) started.
+
+> Task :clean-excluded-jars UP-TO-DATE
+Caching disabled for task ':clean-excluded-jars' because:
+  Build cache is disabled
+Task ':clean-excluded-jars' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+Resolve mutations for :copyDeploymentArtifacts (Thread[Execution worker,5,main]) started.
+:copyDeploymentArtifacts (Thread[Execution worker,5,main]) started.
+
+> Task :copyDeploymentArtifacts
+Caching disabled for task ':copyDeploymentArtifacts' because:
+  Build cache is disabled
+Task ':copyDeploymentArtifacts' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+Resolve mutations for :copyLibs (Thread[Execution worker,5,main]) started.
+:copyLibs (Thread[Execution worker,5,main]) started.
+
+> Task :copyLibs NO-SOURCE
+Skipping task ':copyLibs' as it has no source files and no previous output files.
+Resolve mutations for :copyResources (Thread[Execution worker,5,main]) started.
+:copyResources (Thread[Execution worker Thread 16,5,main]) started.
+
+> Task :copyResources NO-SOURCE
+Skipping task ':copyResources' as it has no source files and no previous output files.
+Resolve mutations for :unzipDataSnapshot (Thread[Execution worker Thread 16,5,main]) started.
+:unzipDataSnapshot (Thread[Execution worker Thread 29,5,main]) started.
+
+> Task :unzipDataSnapshot SKIPPED
+Skipping task ':unzipDataSnapshot' as task onlyIf 'Task is enabled' is false.
+Resolve mutations for :deploy (Thread[Execution worker Thread 29,5,main]) started.
+:deploy (Thread[Execution worker Thread 29,5,main]) started.
+
+> Task :deploy
+Skipping task ':deploy' as it has no actions.
+
+[Incubating] Problems report is available at: file:///C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 915ms
+2 actionable tasks: 1 executed, 1 up-to-date
+Watched directory hierarchies: [C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment, C:\Users\zf_karaymeh\Mendix\KHCB_Retail_Platform-feature_cards\deployment]
+
+
+

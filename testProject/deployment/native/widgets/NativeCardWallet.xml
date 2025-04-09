@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="khaleeji.nativecardwallet.NativeCardWallet" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Native"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Native Card Wallet</name>
+    <description>This widget will handle displaying a list of cards with animations similar what Apple did with Apple Wallet</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <property key="yourName" type="string" required="false">
+                <caption>Name</caption>
+                <description>Enter your name</description>
+            </property>
+            <property key="cardImage" type="image" required="false">
+                <caption>Background Image</caption>
+                <description>Image shown blurred in a background</description>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>

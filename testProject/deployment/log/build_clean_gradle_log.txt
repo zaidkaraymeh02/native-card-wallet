@@ -1,0 +1,51 @@
+Initialized native services in: C:\Users\zf_karaymeh\.gradle\native
+Initialized jansi services in: C:\Users\zf_karaymeh\.gradle\native
+The client will now receive all logging from the daemon (pid: 24704). The daemon log file: C:\Users\zf_karaymeh\.gradle\daemon\8.13\daemon-24704.out.log
+Starting 11th build in daemon [uptime: 3 hrs 52 mins 29.393 secs, performance: 98%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 27% of 384 MiB]
+Using 32 worker leases.
+Now considering [C:\Users\zf_karaymeh\Projects\native-custom-widgets\cards-wallet\cardWallet\tests\testProject\deployment, C:\Users\zf_karaymeh\Mendix\KHCB_Retail_Platform-feature_cards\deployment] as hierarchies to watch
+Watching the file system is configured to be enabled if available
+File system watching is active
+Starting Build
+Settings evaluated using settings file 'C:\Users\zf_karaymeh\Projects\native-custom-widgets\cards-wallet\cardWallet\tests\testProject\deployment\settings.gradle'.
+Projects loaded. Root project using build file 'C:\Users\zf_karaymeh\Projects\native-custom-widgets\cards-wallet\cardWallet\tests\testProject\deployment\build.gradle'.
+Included projects: [root project 'deployment']
+
+> Configure project :
+Evaluating root project 'deployment' using build file 'C:\Users\zf_karaymeh\Projects\native-custom-widgets\cards-wallet\cardWallet\tests\testProject\deployment\build.gradle'.
+Caching disabled for Groovy DSL script compilation (cp_dsl) because:
+  Build cache is disabled
+  Not worth caching.
+Compiling script 'C:\Users\zf_karaymeh\Projects\native-custom-widgets\cards-wallet\cardWallet\tests\testProject\deployment\variables.gradle' using SubsetScriptTransformer.
+Caching disabled for Groovy DSL script compilation (dsl) because:
+  Build cache is disabled
+  Not worth caching.
+Compiling script 'C:\Users\zf_karaymeh\Projects\native-custom-widgets\cards-wallet\cardWallet\tests\testProject\deployment\variables.gradle' using BuildScriptTransformer.
+All projects evaluated.
+Task name matched 'clean'
+Selected primary task 'clean' from project :
+Tasks to be executed: [task ':clean']
+Tasks that were excluded: []
+Resolve mutations for :clean (Thread[Execution worker,5,main]) started.
+:clean (Thread[Execution worker Thread 24,5,main]) started.
+
+> Task :clean UP-TO-DATE
+Caching disabled for task ':clean' because:
+  Build cache is disabled
+Task ':clean' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+
+[Incubating] Problems report is available at: file:///C:/Users/zf_karaymeh/Projects/native-custom-widgets/cards-wallet/cardWallet/tests/testProject/deployment/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 9s
+1 actionable task: 1 up-to-date
+Watched directory hierarchies: [C:\Users\zf_karaymeh\Mendix\KHCB_Retail_Platform-feature_cards\deployment]
+
+
+
