@@ -1,5 +1,5 @@
-import { createElement } from 'react';
-import { StyleSheet } from 'react-native';
+import React, { useState, useEffect, createElement, useRef } from 'react';
+import { Animated, StyleSheet, useWindowDimensions, Easing, TouchableWithoutFeedback, View, PanResponder } from 'react-native';
 import FastImageComponent from 'react-native-fast-image';
 
 var dist = {};
@@ -287,7 +287,89 @@ function requireDist () {
 
 requireDist();
 
-StyleSheet.create({
+function _extends() {
+  return _extends = Object.assign ? Object.assign.bind() : function (n) {
+    for (var e = 1; e < arguments.length; e++) {
+      var t = arguments[e];
+      for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
+    }
+    return n;
+  }, _extends.apply(null, arguments);
+}
+
+const AnimatedFastImage = Animated.createAnimatedComponent(FastImageComponent);
+const clamp$1 = (value, min, max) => Math.min(Math.max(value, min), max);
+const Card = ({
+  card,
+  index,
+  scrollY,
+  activeCardIndex
+}) => {
+  const [cardHeight, setCardHeight] = useState(0);
+  const {
+    height: screenHeight
+  } = useWindowDimensions();
+  const translateY = new Animated.Value(0);
+  useEffect(() => {
+    const listenerId = scrollY.addListener(({
+      value
+    }) => {
+      const target = clamp$1(-value, -index * cardHeight, 0);
+      translateY.setValue(target);
+    });
+    return () => {
+      scrollY.removeListener(listenerId);
+    };
+  }, [scrollY, cardHeight]);
+  useEffect(() => {
+    const listenerId = activeCardIndex.addListener(({
+      value
+    }) => {
+      if (value === -1) {
+        Animated.timing(translateY, {
+          toValue: clamp$1(-scrollY._value, -index * cardHeight, 0),
+          duration: 300,
+          easing: Easing.out(Easing.quad),
+          useNativeDriver: false
+        }).start();
+      } else if (value === index) {
+        Animated.timing(translateY, {
+          toValue: -index * cardHeight,
+          duration: 500,
+          easing: Easing.out(Easing.quad),
+          useNativeDriver: false
+        }).start();
+      } else {
+        Animated.timing(translateY, {
+          toValue: -index * cardHeight * 0.9 + screenHeight * 0.7,
+          duration: 500,
+          easing: Easing.out(Easing.quad),
+          useNativeDriver: false
+        }).start();
+      }
+    });
+    return () => {
+      activeCardIndex.removeListener(listenerId);
+    };
+  }, [cardHeight]);
+  const handleTap = () => {
+    activeCardIndex.setValue(activeCardIndex._value === -1 ? index : -1);
+  };
+  return createElement(TouchableWithoutFeedback, {
+    onPress: handleTap
+  }, createElement(View, {
+    style: styles.container
+  }, createElement(AnimatedFastImage, {
+    source: card,
+    onLayout: event => setCardHeight(event.nativeEvent.layout.height + 10),
+    style: [styles.image, {
+      transform: [{
+        translateY
+      }]
+    }]
+  })));
+};
+const styles = StyleSheet.create({
   container: {
     shadowColor: '#B387DF',
     shadowOffset: {
@@ -306,72 +388,62 @@ StyleSheet.create({
   }
 });
 
+// const cards = [
+//   require('../assets/Card 1.png'),
+//   require('../assets/Card 2.png'),
+//   require('../assets/Card 3.png'),
+//   require('../assets/Card 4.png'),
+//   require('../assets/Card 5.png'),
+//   require('../assets/Card 6.png'),
+//   require('../assets/Card 7.png'),
+//   require('../assets/Card 8.png'),
+//   require('../assets/Card 9.png'),
+// ];
+
+const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 const CardsList = props => {
-  // const [listHeight, setListHeight] = useState(0);
-  // const { height: screenHeight } = useWindowDimensions();
-
-  // const activeCardIndex = useRef(new Animated.Value(-1)).current;
-  // const scrollY = useRef(new Animated.Value(0)).current;
-  // const maxScrollY = useRef(0);
-
-  // const panResponder = useRef(
-  //   PanResponder.create({
-  //     onMoveShouldSetPanResponder: () => true,
-  //     onPanResponderMove: (_, gestureState) => {
-  //       scrollY.setValue(
-  //         clamp(scrollY._value - gestureState.dy, 0, maxScrollY.current)
-  //       );
-  //     },
-  //     onPanResponderRelease: (_, gestureState) => {
-  //       Animated.decay(scrollY, {
-  //         velocity: -gestureState.vy,
-  //         deceleration: 0.997,
-  //         useNativeDriver: false,
-  //       }).start();
-  //     },
-  //   })
-  // ).current;
-
-  // const onLayout = (e) => {
-  //   setListHeight(e.nativeEvent.layout.height);
-  //   maxScrollY.current = e.nativeEvent.layout.height - screenHeight + 70;
-  // };
-
-  return (
-    // <View
-    //   {...panResponder.panHandlers}
-    //   onLayout={onLayout}
-    //   style={{ padding: 10 }}
-    // >
-    // <Text>{JSON.stringify(props, null, 2)}</Text>
-    // <Text>Hello World - {props.cardImage}</Text>
-    //   {/* {cards.map((card, index) => (
-    //     <Card
-    //       key={index}
-    //       card={card}
-    //       index={index}
-    //       scrollY={scrollY}
-    //       activeCardIndex={activeCardIndex}
-    //     />
-    //   ))} */}
-    // </View>
-    createElement(FastImageComponent
-    // testID={`${name}$Image`} // Broken because of https://github.com/DylanVann/react-native-fast-image/issues/221
-    , {
-      source: props.cardImage.image,
-      resizeMode: "contain"
-      // style={[
-      //     initialDimensions?.aspectRatio ? { aspectRatio: +initialDimensions.aspectRatio?.toFixed(2) } : {},
-      //     width && height ? { width, height } : {},
-      //     imageStyles
-      // ]}
-      ,
-      style: [{
-        width: 100,
-        height: 100
-      }]
-    })
-  );
+  const [listHeight, setListHeight] = useState(0);
+  const {
+    height: screenHeight
+  } = useWindowDimensions();
+  const activeCardIndex = useRef(new Animated.Value(-1)).current;
+  const scrollY = useRef(new Animated.Value(0)).current;
+  const maxScrollY = useRef(0);
+  const panResponder = useRef(PanResponder.create({
+    onMoveShouldSetPanResponder: () => true,
+    onPanResponderMove: (_, gestureState) => {
+      scrollY.setValue(clamp(scrollY._value - gestureState.dy, 0, maxScrollY.current));
+    },
+    onPanResponderRelease: (_, gestureState) => {
+      Animated.decay(scrollY, {
+        velocity: -gestureState.vy,
+        deceleration: 0.997,
+        useNativeDriver: false
+      }).start();
+    }
+  })).current;
+  const onLayout = e => {
+    setListHeight(e.nativeEvent.layout.height);
+    maxScrollY.current = e.nativeEvent.layout.height - screenHeight + 70;
+  };
+  return createElement(React.Fragment, null, createElement(View, _extends({}, panResponder.panHandlers, {
+    onLayout: onLayout,
+    style: {
+      padding: 10
+    }
+  }), createElement(Card, {
+    key: 1,
+    card: props.cardImage.image,
+    index: 1,
+    scrollY: scrollY,
+    activeCardIndex: activeCardIndex
+  }), createElement(Card, {
+    key: 2,
+    card: props.cardImage.image,
+    index: 2,
+    scrollY: scrollY,
+    activeCardIndex: activeCardIndex
+  })));
 };
 
 function NativeCardWallet(props) {

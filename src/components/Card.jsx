@@ -1,11 +1,11 @@
 import React, { useEffect, useState, createElement } from 'react';
 import { Animated, Easing, StyleSheet, View, TouchableWithoutFeedback, useWindowDimensions } from 'react-native';
-
+import FastImageComponent, { Source } from "react-native-fast-image";
+const AnimatedFastImage = Animated.createAnimatedComponent(FastImageComponent);
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
 const Card = ({ card, index, scrollY, activeCardIndex }) => {
   const [cardHeight, setCardHeight] = useState(0);
-  
   const { height: screenHeight } = useWindowDimensions();
 
   const translateY = new Animated.Value(0);
@@ -59,8 +59,8 @@ const Card = ({ card, index, scrollY, activeCardIndex }) => {
   return (
     <TouchableWithoutFeedback onPress={handleTap}>
       <View style={styles.container}>
-        <Animated.Image
-          source={"C:\\Users\\zf_karaymeh\\Projects\\nativeCardWallet\\src\\assets\\Card 7.png"}
+        <AnimatedFastImage
+          source={card}
           onLayout={(event) =>
             setCardHeight(event.nativeEvent.layout.height + 10)
           }
