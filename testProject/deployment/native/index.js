@@ -259,10 +259,10 @@ startApp({
         }
     ] ),
     "registerPages": () => {
-        NativeUI.registerPage("NativeMobile.Home_Native", ()=> require("C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native/pages/NativeMobile.Home_Native"), {"sidebar":false,"headerRegionName":"placeholder$Header","showBottomBar":true,"type":"Default"});
+        NativeUI.registerPage("NativeMobile.Home_Native", ()=> require("C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native/pages/NativeMobile.Home_Native"), {"sidebar":false,"showBottomBar":true,"type":"Default"});
     },
     "animationEnabled": true,
-    "deploymentID": "638798090631146993",
+    "deploymentID": "638798798858695144",
     "checkForOTAUpdates": false,
     "loggingEnabled": false,
     "encryptionDbEnabled": false,

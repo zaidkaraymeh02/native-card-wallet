@@ -4,7 +4,7 @@ import FastImageComponent, { Source } from "react-native-fast-image";
 const AnimatedFastImage = Animated.createAnimatedComponent(FastImageComponent);
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
-const Card = ({ card, index, scrollY, activeCardIndex }) => {
+export function  Card ({ card, index, scrollY, activeCardIndex })  {
   const [cardHeight, setCardHeight] = useState(0);
   const { height: screenHeight } = useWindowDimensions();
 
@@ -32,14 +32,14 @@ const Card = ({ card, index, scrollY, activeCardIndex }) => {
         }).start();
       } else if (value === index) {
         Animated.timing(translateY, {
-          toValue: -index * cardHeight,
+          toValue: -index * cardHeight + 250,
           duration: 500,
           easing: Easing.out(Easing.quad),
           useNativeDriver: false,
         }).start();
       } else {
         Animated.timing(translateY, {
-          toValue: -index * cardHeight * 0.9 + screenHeight * 0.7,
+          toValue: -index * cardHeight * 0.9 + screenHeight * 0.8,
           duration: 500,
           easing: Easing.out(Easing.quad),
           useNativeDriver: false,
@@ -58,13 +58,14 @@ const Card = ({ card, index, scrollY, activeCardIndex }) => {
 
   return (
     <TouchableWithoutFeedback onPress={handleTap}>
-      <View style={styles.container}>
+      <View >
         <AnimatedFastImage
           source={card}
           onLayout={(event) =>
             setCardHeight(event.nativeEvent.layout.height + 10)
           }
           style={[styles.image, { transform: [{ translateY }] }]}
+          resizeMode={FastImageComponent.resizeMode.stretch}
         />
       </View>
     </TouchableWithoutFeedback>
@@ -78,13 +79,16 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+    width: '100%',
+    overflow: 'hidden'
   },
   image: {
     width: '100%',
-    height: undefined,
-    aspectRatio: 7 / 4,
+    height: 'auto',
+    aspectRatio: 343 / 218,
     marginVertical: 5,
+    // resizeMode: 'contain',
+    // objectFit: 'contain',
   },
 });
 
-export default Card;

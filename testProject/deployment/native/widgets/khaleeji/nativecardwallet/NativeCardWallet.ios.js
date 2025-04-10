@@ -1,6 +1,8 @@
 import React, { useState, useEffect, createElement, useRef } from 'react';
 import { Animated, StyleSheet, useWindowDimensions, Easing, TouchableWithoutFeedback, View, PanResponder } from 'react-native';
 import FastImageComponent from 'react-native-fast-image';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 var dist = {};
 
@@ -299,12 +301,12 @@ function _extends() {
 
 const AnimatedFastImage = Animated.createAnimatedComponent(FastImageComponent);
 const clamp$1 = (value, min, max) => Math.min(Math.max(value, min), max);
-const Card = ({
+function Card({
   card,
   index,
   scrollY,
   activeCardIndex
-}) => {
+}) {
   const [cardHeight, setCardHeight] = useState(0);
   const {
     height: screenHeight
@@ -334,14 +336,14 @@ const Card = ({
         }).start();
       } else if (value === index) {
         Animated.timing(translateY, {
-          toValue: -index * cardHeight,
+          toValue: -index * cardHeight + 250,
           duration: 500,
           easing: Easing.out(Easing.quad),
           useNativeDriver: false
         }).start();
       } else {
         Animated.timing(translateY, {
-          toValue: -index * cardHeight * 0.9 + screenHeight * 0.7,
+          toValue: -index * cardHeight * 0.9 + screenHeight * 0.8,
           duration: 500,
           easing: Easing.out(Easing.quad),
           useNativeDriver: false
@@ -357,18 +359,17 @@ const Card = ({
   };
   return createElement(TouchableWithoutFeedback, {
     onPress: handleTap
-  }, createElement(View, {
-    style: styles.container
-  }, createElement(AnimatedFastImage, {
+  }, createElement(View, null, createElement(AnimatedFastImage, {
     source: card,
     onLayout: event => setCardHeight(event.nativeEvent.layout.height + 10),
     style: [styles.image, {
       transform: [{
         translateY
       }]
-    }]
+    }],
+    resizeMode: FastImageComponent.resizeMode.stretch
   })));
-};
+}
 const styles = StyleSheet.create({
   container: {
     shadowColor: '#B387DF',
@@ -378,13 +379,17 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5
+    elevation: 5,
+    width: '100%',
+    overflow: 'hidden'
   },
   image: {
     width: '100%',
-    height: undefined,
-    aspectRatio: 7 / 4,
+    height: 'auto',
+    aspectRatio: 343 / 218,
     marginVertical: 5
+    // resizeMode: 'contain',
+    // objectFit: 'contain',
   }
 });
 
@@ -401,7 +406,7 @@ const styles = StyleSheet.create({
 // ];
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-const CardsList = props => {
+function CardsList(props) {
   const [listHeight, setListHeight] = useState(0);
   const {
     height: screenHeight
@@ -423,7 +428,7 @@ const CardsList = props => {
     }
   })).current;
   const onLayout = e => {
-    setListHeight(e.nativeEvent.layout.height);
+    setListHeight(e.nativeEvent.layout.height - screenHeight);
     maxScrollY.current = e.nativeEvent.layout.height - screenHeight + 70;
   };
   return createElement(React.Fragment, null, createElement(View, _extends({}, panResponder.panHandlers, {
@@ -443,18 +448,38 @@ const CardsList = props => {
     index: 2,
     scrollY: scrollY,
     activeCardIndex: activeCardIndex
+  }), createElement(Card, {
+    key: 3,
+    card: props.cardImage.image,
+    index: 3,
+    scrollY: scrollY,
+    activeCardIndex: activeCardIndex
+  }), createElement(Card, {
+    key: 4,
+    card: props.cardImage.image,
+    index: 4,
+    scrollY: scrollY,
+    activeCardIndex: activeCardIndex
   })));
-};
+}
 
 function NativeCardWallet(props) {
   console.log("PROPS", props);
-  return createElement(CardsList, {
+  return createElement(GestureHandlerRootView, {
+    style: {
+      flex: 1
+    }
+  }, createElement(SafeAreaProvider, null, createElement(SafeAreaView, {
+    style: {
+      flex: 1
+    }
+  }, createElement(CardsList, {
     cardImage: {
       type: "staticImage",
       // Static image
       image: props.cardImage.value
     }
-  });
+  }))));
 }
 
 export { NativeCardWallet };

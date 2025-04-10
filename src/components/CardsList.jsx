@@ -1,8 +1,7 @@
 import React, { useState, useRef, createElement } from 'react';
 import { View, useWindowDimensions, Animated, PanResponder, Text } from 'react-native';
 import FastImageComponent, { Source } from "react-native-fast-image";
-import Card from './Card';
-
+import { Card } from './Card'; // Assuming Card is in the same directory
 // const cards = [
 //   require('../assets/Card 1.png'),
 //   require('../assets/Card 2.png'),
@@ -17,7 +16,7 @@ import Card from './Card';
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
-const CardsList = (props) => {
+export function CardsList(props) {
   const [listHeight, setListHeight] = useState(0);
   const { height: screenHeight } = useWindowDimensions();
 
@@ -44,7 +43,7 @@ const CardsList = (props) => {
   ).current;
 
   const onLayout = (e) => {
-    setListHeight(e.nativeEvent.layout.height);
+    setListHeight(e.nativeEvent.layout.height - screenHeight);
     maxScrollY.current = e.nativeEvent.layout.height - screenHeight + 70;
   };
 
@@ -63,6 +62,7 @@ const CardsList = (props) => {
       scrollY={scrollY}
       activeCardIndex={activeCardIndex}
     />
+    
     <Card
       key={2}
       card={props.cardImage.image}
@@ -70,6 +70,22 @@ const CardsList = (props) => {
       scrollY={scrollY}
       activeCardIndex={activeCardIndex}
     />
+    
+    <Card
+      key={3}
+      card={props.cardImage.image}
+      index={3}
+      scrollY={scrollY}
+      activeCardIndex={activeCardIndex}
+    />
+    <Card
+      key={4}
+      card={props.cardImage.image}
+      index={4}
+      scrollY={scrollY}
+      activeCardIndex={activeCardIndex}
+    />
+    
       {/* {cards.map((card, index) => (
         <Card
           key={index}

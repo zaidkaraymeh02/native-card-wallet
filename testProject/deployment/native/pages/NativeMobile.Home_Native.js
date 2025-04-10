@@ -12,23 +12,23 @@ import { mainContent, sidebar } from "C:/Users/zf_karaymeh/Projects/nativeCardWa
 
 import * as styles from "../styles.js";
 
-import NativeMobile$Image_collection$Card_3$png from "C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native/img/NativeMobile$Image_collection$Card_3.png";
+import NativeMobile$Image_collection$Card_Infinite$png from "C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native/img/NativeMobile$Image_collection$Card_Infinite.png";
 
 const { $Container, $khaleeji_nativecardwallet_NativeCardWallet } = asPluginWidgets({ Container, khaleeji_nativecardwallet_NativeCardWallet });
 
 const placeholder$Main = () => [
-    <$Container key="p0.NativeMobile.Home_Native.container5"
-        $widgetId="p0.NativeMobile.Home_Native.container5"
+    <$Container key="p1.NativeMobile.Home_Native.container5"
+        $widgetId="p1.NativeMobile.Home_Native.container5"
         style={NativeStyleProperty({
             "styles": [ styles.Container, styles.flexMain, styles.alignChildrenCenter, styles.justifyContentCenter, styles.spacingInnerLeftMedium, styles.spacingInnerRightMedium, styles.backgroundPrimary ]
         })}
         onClick={undefined}
         content={[
-            <$khaleeji_nativecardwallet_NativeCardWallet key="p0.NativeMobile.Home_Native.nativeCardWallet1"
-                $widgetId="p0.NativeMobile.Home_Native.nativeCardWallet1"
+            <$khaleeji_nativecardwallet_NativeCardWallet key="p1.NativeMobile.Home_Native.nativeCardWallet1"
+                $widgetId="p1.NativeMobile.Home_Native.nativeCardWallet1"
                 yourName={""}
                 cardImage={NativeStaticImageProperty({
-                    "image": NativeMobile$Image_collection$Card_3$png
+                    "image": NativeMobile$Image_collection$Card_Infinite$png
                 })}
                 style={NativeStyleProperty({
                     "styles": [ styles.khaleeji_nativecardwallet_NativeCardWallet ]
@@ -36,8 +36,6 @@ const placeholder$Main = () => [
         ]}
         accessible={false} />
 ];
-
-export const placeholder$Header = () => null;
 
 export const $$title = t([
     "Home"
