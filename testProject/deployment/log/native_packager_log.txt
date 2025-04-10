@@ -87,3 +87,224 @@ C:\Program Files\Mendix\10.18.1.55792\modeler\tools\node\win-x64\node.exe C:\Pro
 [Error] Error: ENOENT: no such file or directory, scandir 'C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment\native\node_modules\react-native\Libraries\LogBox\UI\LogBoxImages'
 [Output]  DEBUG  [Client] maxScrollY -100.66669573102683
 [Output]  DEBUG  [Client] maxScrollY -100.66669573102683
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output] MxTerminalReporter: {"event":"bundle_build_started"}
+[Output]  BUNDLE  ./index.js 
+
+[Output] MxTerminalReporter: {"event":"bundle_build_done"}
+[Output]  DEBUG  [Client] Running "App" with {"rootTag":2401}
+[Output]  DEBUG  [Startup] Starting app on android 36 using bundle with deployment id: 638798943004481059.
+[Output] MX Client version is 10.18.1.55792.
+[Output] Mendix OTA is disabled.
+[Output] Developer app: yes.
+[Output] Screen Transition: SystemDefault.
+[Output] Popup transition: SystemDefault}
+[Output]  DEBUG  [Startup] Database encryption is disabled. Skip deletion
+[Output]  DEBUG  [Startup] Found a cached session data created by the bundle 638798943004481059 in Mendix 10.18.1.55792. The cached session is in development mode.
+[Output]  DEBUG  [Startup] The cached session data is valid.
+[Output]  DEBUG  [Startup] The app will not use the cached session data.
+[Output]  DEBUG  [Startup] Getting a new session from runtime.
+[Output]  DEBUG  [Network] Starting runtime action: get_session_data
+[Output]  DEBUG  [Network] Finished runtime action "get_session_data" in 152.3 milliseconds.
+[Output]  DEBUG  [Startup] Created a new session in 153.0 milliseconds
+[Output]  DEBUG  [Startup] The app is in development mode and will start with an anonymous user with the roles "Administrator" in offline mode.
+[Output]  DEBUG  [Startup] The client uses user scoped files directories.
+[Output]  DEBUG  [Startup] Encrypting user files and images is disabled
+[Output]  DEBUG  [Startup] The database schema is up-to-date.
+[Output]  DEBUG  [Startup]  The app will not perform a startup sync.
+[Output]  DEBUG  [Startup] Showing home page NativeMobile.Home_Native
+[Output]  DEBUG  [Startup] Startup completed in 462.4 milliseconds.
+[Output]  WARN  [Client] Looks like you're passing an inline function for 'component' prop for the screen 'STACK' (e.g. component={() => <SomeComponent />}). Passing an inline function will cause the component state to be lost on re-render and cause perf issues since it's re-created every render. You can pass the function as children to 'Screen' instead to achieve the desired behaviour. [Component Stack]
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output]  WARN  [Client] Looks like you're passing an inline function for 'component' prop for the screen 'STACK' (e.g. component={() => <SomeComponent />}). Passing an inline function will cause the component state to be lost on re-render and cause perf issues since it's re-created every render. You can pass the function as children to 'Screen' instead to achieve the desired behaviour. [Component Stack]
+[Output]  DEBUG  [Database] SQL request was completed in 2.0 milliseconds. Rows count: 1. Query: "CREATE TABLE IF NOT EXISTS "mxanonymous$_guidToTable" ("guid" text COLLATE NOCASE PRIMARY KEY, "tableName" text COLLATE NOCASE, "syncId" text COLLATE NOCASE, "readonlyAttrs" text COLLATE NOCASE)
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 3.2 milliseconds. Rows count: 1. Query: "CREATE INDEX IF NOT EXISTS [idx_mxanonymous$_guidToTable_tableName_withSyncId] ON [mxanonymous$_guidToTable]([tableName]) WHERE [syncId] IS NOT NULL
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 4.4 milliseconds. Rows count: 1. Query: "CREATE TABLE IF NOT EXISTS "_db_meta" ("name" text COLLATE NOCASE PRIMARY KEY, "value" text COLLATE NOCASE)
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 5.3 milliseconds. Rows count: 1. Query: "INSERT OR IGNORE INTO "_db_meta" (name, value) VALUES (?,?)
+[Output] Params: ["version","2"]
+[Output]  DEBUG  [Database] SQL request was completed in 6.9 milliseconds. Rows count: 1. Query: "INSERT OR IGNORE INTO "_db_meta" (name, value) VALUES (?,?)
+[Output] Params: ["cnt","0"]
+[Output]  DEBUG  [Database] SQL request was completed in 8.0 milliseconds. Rows count: 1. Query: "INSERT OR IGNORE INTO "_db_meta" (name, value) VALUES (?,?)
+[Output] Params: ["mxanonymous$offline_metadata","[]"]
+[Output]  DEBUG  [Database] SQL request was completed in 9.0 milliseconds. Rows count: 1. Query: "CREATE TABLE IF NOT EXISTS "mxanonymous$_tombstoneTable" ("guid" text COLLATE NOCASE PRIMARY KEY, "syncId" text COLLATE NOCASE)
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 1.6 milliseconds. Rows count: 1. Query: "SELECT value FROM "_db_meta" WHERE "name" = ?
+[Output] Params: ["version"]
+[Output]  DEBUG  [Database] SQL request was completed in 0.8 milliseconds. Rows count: 0. Query: "SELECT "guid", "tableName" FROM "mxanonymous$_guidToTable" WHERE "syncId" IS NOT NULL
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 1.9 milliseconds. Rows count: 1. Query: "SELECT value FROM "_db_meta" WHERE "name" = ?
+[Output] Params: ["mxanonymous$offline_metadata"]
+[Error] Error: ENOENT: no such file or directory, scandir 'C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment\native\node_modules\react-native\Libraries\LogBox\UI\LogBoxImages'
+[Output]  DEBUG  [Client] maxScrollY -100.66669573102683
+[Output]  DEBUG  [Client] maxScrollY -100.66669573102683
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output] MxTerminalReporter: {"event":"bundle_build_started"}
+[Output]  BUNDLE  ./index.js 
+
+[Output] MxTerminalReporter: {"event":"bundle_build_done"}
+[Output]  DEBUG  [Client] Running "App" with {"rootTag":2431}
+[Output]  DEBUG  [Startup] Starting app on android 36 using bundle with deployment id: 638798943004481059.
+[Output] MX Client version is 10.18.1.55792.
+[Output] Mendix OTA is disabled.
+[Output] Developer app: yes.
+[Output] Screen Transition: SystemDefault.
+[Output] Popup transition: SystemDefault}
+[Output]  DEBUG  [Startup] Database encryption is disabled. Skip deletion
+[Output]  DEBUG  [Startup] Found a cached session data created by the bundle 638798943004481059 in Mendix 10.18.1.55792. The cached session is in development mode.
+[Output]  DEBUG  [Startup] The cached session data is valid.
+[Output]  DEBUG  [Startup] The app will not use the cached session data.
+[Output]  DEBUG  [Startup] Getting a new session from runtime.
+[Output]  DEBUG  [Network] Starting runtime action: get_session_data
+[Output]  DEBUG  [Network] Finished runtime action "get_session_data" in 106.5 milliseconds.
+[Output]  DEBUG  [Startup] Created a new session in 107.4 milliseconds
+[Output]  DEBUG  [Startup] The app is in development mode and will start with an anonymous user with the roles "Administrator" in offline mode.
+[Output]  DEBUG  [Startup] The client uses user scoped files directories.
+[Output]  DEBUG  [Startup] Encrypting user files and images is disabled
+[Output]  DEBUG  [Startup] The database schema is up-to-date.
+[Output]  DEBUG  [Startup]  The app will not perform a startup sync.
+[Output]  DEBUG  [Startup] Showing home page NativeMobile.Home_Native
+[Output]  DEBUG  [Startup] Startup completed in 436.4 milliseconds.
+[Output]  WARN  [Client] Looks like you're passing an inline function for 'component' prop for the screen 'STACK' (e.g. component={() => <SomeComponent />}). Passing an inline function will cause the component state to be lost on re-render and cause perf issues since it's re-created every render. You can pass the function as children to 'Screen' instead to achieve the desired behaviour. [Component Stack]
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output]  WARN  [Client] Looks like you're passing an inline function for 'component' prop for the screen 'STACK' (e.g. component={() => <SomeComponent />}). Passing an inline function will cause the component state to be lost on re-render and cause perf issues since it's re-created every render. You can pass the function as children to 'Screen' instead to achieve the desired behaviour. [Component Stack]
+[Output]  DEBUG  [Database] SQL request was completed in 1.8 milliseconds. Rows count: 1. Query: "CREATE TABLE IF NOT EXISTS "mxanonymous$_guidToTable" ("guid" text COLLATE NOCASE PRIMARY KEY, "tableName" text COLLATE NOCASE, "syncId" text COLLATE NOCASE, "readonlyAttrs" text COLLATE NOCASE)
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 2.9 milliseconds. Rows count: 1. Query: "CREATE INDEX IF NOT EXISTS [idx_mxanonymous$_guidToTable_tableName_withSyncId] ON [mxanonymous$_guidToTable]([tableName]) WHERE [syncId] IS NOT NULL
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 4.6 milliseconds. Rows count: 1. Query: "CREATE TABLE IF NOT EXISTS "_db_meta" ("name" text COLLATE NOCASE PRIMARY KEY, "value" text COLLATE NOCASE)
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 5.8 milliseconds. Rows count: 1. Query: "INSERT OR IGNORE INTO "_db_meta" (name, value) VALUES (?,?)
+[Output] Params: ["version","2"]
+[Output]  DEBUG  [Database] SQL request was completed in 7.6 milliseconds. Rows count: 1. Query: "INSERT OR IGNORE INTO "_db_meta" (name, value) VALUES (?,?)
+[Output] Params: ["cnt","0"]
+[Output]  DEBUG  [Database] SQL request was completed in 9.1 milliseconds. Rows count: 1. Query: "INSERT OR IGNORE INTO "_db_meta" (name, value) VALUES (?,?)
+[Output] Params: ["mxanonymous$offline_metadata","[]"]
+[Output]  DEBUG  [Database] SQL request was completed in 9.9 milliseconds. Rows count: 1. Query: "CREATE TABLE IF NOT EXISTS "mxanonymous$_tombstoneTable" ("guid" text COLLATE NOCASE PRIMARY KEY, "syncId" text COLLATE NOCASE)
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 1.6 milliseconds. Rows count: 1. Query: "SELECT value FROM "_db_meta" WHERE "name" = ?
+[Output] Params: ["version"]
+[Output]  DEBUG  [Database] SQL request was completed in 2.3 milliseconds. Rows count: 0. Query: "SELECT "guid", "tableName" FROM "mxanonymous$_guidToTable" WHERE "syncId" IS NOT NULL
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 1.7 milliseconds. Rows count: 1. Query: "SELECT value FROM "_db_meta" WHERE "name" = ?
+[Output] Params: ["mxanonymous$offline_metadata"]
+[Error] Error: ENOENT: no such file or directory, scandir 'C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment\native\node_modules\react-native\Libraries\LogBox\UI\LogBoxImages'
+[Output]  DEBUG  [Client] maxScrollY -100.66669573102683
+[Output]  DEBUG  [Client] maxScrollY -100.66669573102683
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output]  DEBUG  [Client] maxScrollY -40.476205008370584
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output]  DEBUG  [Client] maxScrollY -0.47620500837058444
+[Output] MxTerminalReporter: {"event":"bundle_build_started"}
+[Output]  BUNDLE  ./index.js 
+
+[Output] MxTerminalReporter: {"event":"bundle_build_done"}
+[Output]  DEBUG  [Client] Running "App" with {"rootTag":2461}
+[Output]  DEBUG  [Startup] Starting app on android 36 using bundle with deployment id: 638798943004481059.
+[Output] MX Client version is 10.18.1.55792.
+[Output] Mendix OTA is disabled.
+[Output] Developer app: yes.
+[Output] Screen Transition: SystemDefault.
+[Output] Popup transition: SystemDefault}
+[Output]  DEBUG  [Startup] Database encryption is disabled. Skip deletion
+[Output]  DEBUG  [Startup] Found a cached session data created by the bundle 638798943004481059 in Mendix 10.18.1.55792. The cached session is in development mode.
+[Output]  DEBUG  [Startup] The cached session data is valid.
+[Output]  DEBUG  [Startup] The app will not use the cached session data.
+[Output]  DEBUG  [Startup] Getting a new session from runtime.
+[Output]  DEBUG  [Network] Starting runtime action: get_session_data
+[Output]  DEBUG  [Network] Finished runtime action "get_session_data" in 159.6 milliseconds.
+[Output]  DEBUG  [Startup] Created a new session in 160.4 milliseconds
+[Output]  DEBUG  [Startup] The app is in development mode and will start with an anonymous user with the roles "Administrator" in offline mode.
+[Output]  DEBUG  [Startup] The client uses user scoped files directories.
+[Output]  DEBUG  [Startup] Encrypting user files and images is disabled
+[Output]  DEBUG  [Startup] The database schema is up-to-date.
+[Output]  DEBUG  [Startup]  The app will not perform a startup sync.
+[Output]  DEBUG  [Startup] Showing home page NativeMobile.Home_Native
+[Output]  DEBUG  [Startup] Startup completed in 501.1 milliseconds.
+[Output]  WARN  [Client] Looks like you're passing an inline function for 'component' prop for the screen 'STACK' (e.g. component={() => <SomeComponent />}). Passing an inline function will cause the component state to be lost on re-render and cause perf issues since it's re-created every render. You can pass the function as children to 'Screen' instead to achieve the desired behaviour. [Component Stack]
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output]  WARN  [Client] Looks like you're passing an inline function for 'component' prop for the screen 'STACK' (e.g. component={() => <SomeComponent />}). Passing an inline function will cause the component state to be lost on re-render and cause perf issues since it's re-created every render. You can pass the function as children to 'Screen' instead to achieve the desired behaviour. [Component Stack]
+[Output]  DEBUG  [Database] SQL request was completed in 4.9 milliseconds. Rows count: 1. Query: "CREATE TABLE IF NOT EXISTS "mxanonymous$_guidToTable" ("guid" text COLLATE NOCASE PRIMARY KEY, "tableName" text COLLATE NOCASE, "syncId" text COLLATE NOCASE, "readonlyAttrs" text COLLATE NOCASE)
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 6.0 milliseconds. Rows count: 1. Query: "CREATE INDEX IF NOT EXISTS [idx_mxanonymous$_guidToTable_tableName_withSyncId] ON [mxanonymous$_guidToTable]([tableName]) WHERE [syncId] IS NOT NULL
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 8.3 milliseconds. Rows count: 1. Query: "CREATE TABLE IF NOT EXISTS "_db_meta" ("name" text COLLATE NOCASE PRIMARY KEY, "value" text COLLATE NOCASE)
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 7.5 milliseconds. Rows count: 1. Query: "INSERT OR IGNORE INTO "_db_meta" (name, value) VALUES (?,?)
+[Output] Params: ["version","2"]
+[Output]  DEBUG  [Database] SQL request was completed in 8.8 milliseconds. Rows count: 1. Query: "INSERT OR IGNORE INTO "_db_meta" (name, value) VALUES (?,?)
+[Output] Params: ["cnt","0"]
+[Output]  DEBUG  [Database] SQL request was completed in 9.7 milliseconds. Rows count: 1. Query: "INSERT OR IGNORE INTO "_db_meta" (name, value) VALUES (?,?)
+[Output] Params: ["mxanonymous$offline_metadata","[]"]
+[Output]  DEBUG  [Database] SQL request was completed in 10.6 milliseconds. Rows count: 1. Query: "CREATE TABLE IF NOT EXISTS "mxanonymous$_tombstoneTable" ("guid" text COLLATE NOCASE PRIMARY KEY, "syncId" text COLLATE NOCASE)
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 1.5 milliseconds. Rows count: 1. Query: "SELECT value FROM "_db_meta" WHERE "name" = ?
+[Output] Params: ["version"]
+[Output]  DEBUG  [Database] SQL request was completed in 1.1 milliseconds. Rows count: 0. Query: "SELECT "guid", "tableName" FROM "mxanonymous$_guidToTable" WHERE "syncId" IS NOT NULL
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 1.1 milliseconds. Rows count: 1. Query: "SELECT value FROM "_db_meta" WHERE "name" = ?
+[Output] Params: ["mxanonymous$offline_metadata"]
+[Output]  DEBUG  [Client] maxScrollY -0.47620500837058444
+[Error] Error: ENOENT: no such file or directory, scandir 'C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment\native\node_modules\react-native\Libraries\LogBox\UI\LogBoxImages'
+[Output]  DEBUG  [Client] maxScrollY -0.47620500837058444
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output] MxTerminalReporter: {"event":"bundle_build_started"}
+[Output]  BUNDLE  ./index.js 
+
+[Output] MxTerminalReporter: {"event":"bundle_build_done"}
+[Output]  DEBUG  [Client] Running "App" with {"rootTag":2491}
+[Output]  DEBUG  [Startup] Starting app on android 36 using bundle with deployment id: 638798943004481059.
+[Output] MX Client version is 10.18.1.55792.
+[Output] Mendix OTA is disabled.
+[Output] Developer app: yes.
+[Output] Screen Transition: SystemDefault.
+[Output] Popup transition: SystemDefault}
+[Output]  DEBUG  [Startup] Database encryption is disabled. Skip deletion
+[Output]  DEBUG  [Startup] Found a cached session data created by the bundle 638798943004481059 in Mendix 10.18.1.55792. The cached session is in development mode.
+[Output]  DEBUG  [Startup] The cached session data is valid.
+[Output]  DEBUG  [Startup] The app will not use the cached session data.
+[Output]  DEBUG  [Startup] Getting a new session from runtime.
+[Output]  DEBUG  [Network] Starting runtime action: get_session_data
+[Output]  DEBUG  [Network] Finished runtime action "get_session_data" in 119.0 milliseconds.
+[Output]  DEBUG  [Startup] Created a new session in 120.0 milliseconds
+[Output]  DEBUG  [Startup] The app is in development mode and will start with an anonymous user with the roles "Administrator" in offline mode.
+[Output]  DEBUG  [Startup] The client uses user scoped files directories.
+[Output]  DEBUG  [Startup] Encrypting user files and images is disabled
+[Output]  DEBUG  [Startup] The database schema is up-to-date.
+[Output]  DEBUG  [Startup]  The app will not perform a startup sync.
+[Output]  DEBUG  [Startup] Showing home page NativeMobile.Home_Native
+[Output]  DEBUG  [Startup] Startup completed in 449.1 milliseconds.
+[Output]  WARN  [Client] Looks like you're passing an inline function for 'component' prop for the screen 'STACK' (e.g. component={() => <SomeComponent />}). Passing an inline function will cause the component state to be lost on re-render and cause perf issues since it's re-created every render. You can pass the function as children to 'Screen' instead to achieve the desired behaviour. [Component Stack]
+[Output]  DEBUG  [Client] PROPS {"cardImage": {"status": "available", "value": 1}, "classicCard": undefined, "goldCard": undefined, "infiniteCard": undefined, "name": "nativeCardWallet1", "normalDebitCard": undefined, "platinumCard": undefined, "style": [{}], "vipDebitCard": undefined, "yourName": ""}
+[Output]  WARN  [Client] Looks like you're passing an inline function for 'component' prop for the screen 'STACK' (e.g. component={() => <SomeComponent />}). Passing an inline function will cause the component state to be lost on re-render and cause perf issues since it's re-created every render. You can pass the function as children to 'Screen' instead to achieve the desired behaviour. [Component Stack]
+[Output]  DEBUG  [Database] SQL request was completed in 1.8 milliseconds. Rows count: 1. Query: "CREATE TABLE IF NOT EXISTS "mxanonymous$_guidToTable" ("guid" text COLLATE NOCASE PRIMARY KEY, "tableName" text COLLATE NOCASE, "syncId" text COLLATE NOCASE, "readonlyAttrs" text COLLATE NOCASE)
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 3.2 milliseconds. Rows count: 1. Query: "CREATE INDEX IF NOT EXISTS [idx_mxanonymous$_guidToTable_tableName_withSyncId] ON [mxanonymous$_guidToTable]([tableName]) WHERE [syncId] IS NOT NULL
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 4.6 milliseconds. Rows count: 1. Query: "CREATE TABLE IF NOT EXISTS "_db_meta" ("name" text COLLATE NOCASE PRIMARY KEY, "value" text COLLATE NOCASE)
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 5.9 milliseconds. Rows count: 1. Query: "INSERT OR IGNORE INTO "_db_meta" (name, value) VALUES (?,?)
+[Output] Params: ["version","2"]
+[Output]  DEBUG  [Database] SQL request was completed in 7.6 milliseconds. Rows count: 1. Query: "INSERT OR IGNORE INTO "_db_meta" (name, value) VALUES (?,?)
+[Output] Params: ["cnt","0"]
+[Output]  DEBUG  [Database] SQL request was completed in 8.5 milliseconds. Rows count: 1. Query: "INSERT OR IGNORE INTO "_db_meta" (name, value) VALUES (?,?)
+[Output] Params: ["mxanonymous$offline_metadata","[]"]
+[Output]  DEBUG  [Database] SQL request was completed in 9.3 milliseconds. Rows count: 1. Query: "CREATE TABLE IF NOT EXISTS "mxanonymous$_tombstoneTable" ("guid" text COLLATE NOCASE PRIMARY KEY, "syncId" text COLLATE NOCASE)
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 1.5 milliseconds. Rows count: 1. Query: "SELECT value FROM "_db_meta" WHERE "name" = ?
+[Output] Params: ["version"]
+[Output]  DEBUG  [Database] SQL request was completed in 1.6 milliseconds. Rows count: 0. Query: "SELECT "guid", "tableName" FROM "mxanonymous$_guidToTable" WHERE "syncId" IS NOT NULL
+[Output] Params: []
+[Output]  DEBUG  [Database] SQL request was completed in 1.0 milliseconds. Rows count: 1. Query: "SELECT value FROM "_db_meta" WHERE "name" = ?
+[Output] Params: ["mxanonymous$offline_metadata"]
+[Error] Error: ENOENT: no such file or directory, scandir 'C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment\native\node_modules\react-native\Libraries\LogBox\UI\LogBoxImages'
+[Output]  DEBUG  [Client] maxScrollY -0.47620500837058444
+[Output]  DEBUG  [Client] maxScrollY -0.47620500837058444

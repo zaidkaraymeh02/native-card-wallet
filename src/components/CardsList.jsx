@@ -51,7 +51,8 @@ export function CardsList(props) {
   return (
     <>
     <View
-s      onLayout={onLayout}
+    // {...panResponder.panHandlers}
+      onLayout={onLayout}
       style={{ padding: 10, paddingTop: 500 }}
     >
     {/* <Text>{JSON.stringify(props, null, 2)}</Text> */}

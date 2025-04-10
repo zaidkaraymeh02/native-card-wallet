@@ -326,7 +326,7 @@ function Card({
         }).start();
       } else if (value === index) {
         Animated.timing(translateY, {
-          toValue: -(screenHeight - cardHeight - 450 + index * 1.2 * cardHeight * 0.3),
+          toValue: -(screenHeight - cardHeight - 450 + index * 1.5 * cardHeight * 0.3),
           duration: 500,
           easing: Easing.out(Easing.quad),
           useNativeDriver: true
@@ -374,7 +374,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   image: {
-    marginTop: -150,
+    marginTop: -120,
     width: '100%',
     height: 'auto',
     aspectRatio: 343 / 218,
@@ -423,8 +423,9 @@ function CardsList(props) {
     maxScrollY.current = e.nativeEvent.layout.height - screenHeight + 70;
     console.log("maxScrollY", maxScrollY.current);
   };
-  return createElement(React.Fragment, null, createElement(View, {
-    s: true,
+  return createElement(React.Fragment, null, createElement(View
+  // {...panResponder.panHandlers}
+  , {
     onLayout: onLayout,
     style: {
       padding: 10,

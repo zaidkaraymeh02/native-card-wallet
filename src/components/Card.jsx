@@ -31,7 +31,7 @@ export function  Card ({ card, index, scrollY, activeCardIndex })  {
         }).start();
     } else if (value === index) {
         Animated.timing(translateY, {
-            toValue: -(screenHeight - cardHeight - 450 + (index * 1.2) * cardHeight * 0.3),
+            toValue: -(screenHeight - cardHeight - 450 + (index * 1.5) * cardHeight * 0.3),
             duration: 500,
             easing: Easing.out(Easing.quad),
             useNativeDriver: true,
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   image: {
-    marginTop: -150,
+    marginTop: -120,
     width: '100%',
     height: 'auto',
     aspectRatio: 343 / 218,
