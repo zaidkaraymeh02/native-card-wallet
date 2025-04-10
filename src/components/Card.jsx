@@ -7,7 +7,6 @@ const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 export function  Card ({ card, index, scrollY, activeCardIndex })  {
   const [cardHeight, setCardHeight] = useState(0);
   const { height: screenHeight } = useWindowDimensions();
-
   const translateY = new Animated.Value(0);
 
   useEffect(() => {
@@ -22,27 +21,27 @@ export function  Card ({ card, index, scrollY, activeCardIndex })  {
   }, [scrollY, cardHeight]);
 
   useEffect(() => {
-    const listenerId = activeCardIndex.addListener(({ value }) => {
+    const listenerId = activeCardIndex.addListener(async({ value }) => {
       if (value === -1) {
         Animated.timing(translateY, {
           toValue: clamp(-scrollY._value, -index * cardHeight, 0),
           duration: 300,
           easing: Easing.out(Easing.quad),
-          useNativeDriver: false,
+          useNativeDriver: true,
         }).start();
-      } else if (value === index) {
+    } else if (value === index) {
         Animated.timing(translateY, {
-          toValue: -index * cardHeight + 250,
-          duration: 500,
-          easing: Easing.out(Easing.quad),
-          useNativeDriver: false,
+            toValue: -(screenHeight - cardHeight - 450 + (index * 1.2) * cardHeight * 0.3),
+            duration: 500,
+            easing: Easing.out(Easing.quad),
+            useNativeDriver: true,
         }).start();
-      } else {
-        Animated.timing(translateY, {
-          toValue: -index * cardHeight * 0.9 + screenHeight * 0.8,
-          duration: 500,
-          easing: Easing.out(Easing.quad),
-          useNativeDriver: false,
+    } else {
+        await Animated.timing(translateY, {
+            toValue: -index * cardHeight * 0.3 + screenHeight * 0.7,
+            duration: 500,
+            easing: Easing.out(Easing.quad),
+            useNativeDriver: true,
         }).start();
       }
     });
@@ -57,15 +56,16 @@ export function  Card ({ card, index, scrollY, activeCardIndex })  {
   };
 
   return (
-    <TouchableWithoutFeedback onPress={handleTap}>
-      <View >
+    <TouchableWithoutFeedback onPress={handleTap} >
+      <View  >
         <AnimatedFastImage
           source={card}
           onLayout={(event) =>
             setCardHeight(event.nativeEvent.layout.height + 10)
           }
-          style={[styles.image, { transform: [{ translateY }] }]}
+          style={[styles.image,  { transform: [{ translateY }] }]}
           resizeMode={FastImageComponent.resizeMode.stretch}
+
         />
       </View>
     </TouchableWithoutFeedback>
@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   image: {
+    marginTop: -150,
     width: '100%',
     height: 'auto',
     aspectRatio: 343 / 218,

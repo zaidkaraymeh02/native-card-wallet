@@ -17,5 +17,31 @@
                 <description>Image shown blurred in a background</description>
             </property>
         </propertyGroup>
+        <propertyGroup caption="Cards">
+            <property key="infiniteCard" type="image" required="false">
+                <caption>Infinite Credit Card</caption>
+                <description />
+            </property>
+            <property key="platinumCard" type="image" required="false">
+                <caption>Platinum Credit Card</caption>
+                <description />
+            </property>
+            <property key="goldCard" type="image" required="false">
+                <caption>Gold Credit Card</caption>
+                <description />
+            </property>
+            <property key="classicCard" type="image" required="false">
+                <caption>Classic Credit Card</caption>
+                <description />
+            </property>
+            <property key="normalDebitCard" type="image" required="false">
+                <caption>Normal Debit Card</caption>
+                <description />
+            </property>
+            <property key="vipDebitCard" type="image" required="false">
+                <caption>VIP Debit Card</caption>
+                <description />
+            </property>
+        </propertyGroup>
     </properties>
 </widget>

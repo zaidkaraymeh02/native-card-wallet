@@ -45,14 +45,14 @@ export function CardsList(props) {
   const onLayout = (e) => {
     setListHeight(e.nativeEvent.layout.height - screenHeight);
     maxScrollY.current = e.nativeEvent.layout.height - screenHeight + 70;
+    console.log("maxScrollY", maxScrollY.current);
   };
 
   return (
     <>
     <View
-      {...panResponder.panHandlers}
-      onLayout={onLayout}
-      style={{ padding: 10 }}
+s      onLayout={onLayout}
+      style={{ padding: 10, paddingTop: 500 }}
     >
     {/* <Text>{JSON.stringify(props, null, 2)}</Text> */}
     <Card

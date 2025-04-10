@@ -289,16 +289,6 @@ function requireDist () {
 
 requireDist();
 
-function _extends() {
-  return _extends = Object.assign ? Object.assign.bind() : function (n) {
-    for (var e = 1; e < arguments.length; e++) {
-      var t = arguments[e];
-      for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
-    }
-    return n;
-  }, _extends.apply(null, arguments);
-}
-
 const AnimatedFastImage = Animated.createAnimatedComponent(FastImageComponent);
 const clamp$1 = (value, min, max) => Math.min(Math.max(value, min), max);
 function Card({
@@ -324,7 +314,7 @@ function Card({
     };
   }, [scrollY, cardHeight]);
   useEffect(() => {
-    const listenerId = activeCardIndex.addListener(({
+    const listenerId = activeCardIndex.addListener(async ({
       value
     }) => {
       if (value === -1) {
@@ -332,21 +322,21 @@ function Card({
           toValue: clamp$1(-scrollY._value, -index * cardHeight, 0),
           duration: 300,
           easing: Easing.out(Easing.quad),
-          useNativeDriver: false
+          useNativeDriver: true
         }).start();
       } else if (value === index) {
         Animated.timing(translateY, {
-          toValue: -index * cardHeight + 250,
+          toValue: -(screenHeight - cardHeight - 450 + index * 1.2 * cardHeight * 0.3),
           duration: 500,
           easing: Easing.out(Easing.quad),
-          useNativeDriver: false
+          useNativeDriver: true
         }).start();
       } else {
-        Animated.timing(translateY, {
-          toValue: -index * cardHeight * 0.9 + screenHeight * 0.8,
+        await Animated.timing(translateY, {
+          toValue: -index * cardHeight * 0.3 + screenHeight * 0.7,
           duration: 500,
           easing: Easing.out(Easing.quad),
-          useNativeDriver: false
+          useNativeDriver: true
         }).start();
       }
     });
@@ -384,6 +374,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   image: {
+    marginTop: -150,
     width: '100%',
     height: 'auto',
     aspectRatio: 343 / 218,
@@ -414,7 +405,7 @@ function CardsList(props) {
   const activeCardIndex = useRef(new Animated.Value(-1)).current;
   const scrollY = useRef(new Animated.Value(0)).current;
   const maxScrollY = useRef(0);
-  const panResponder = useRef(PanResponder.create({
+  useRef(PanResponder.create({
     onMoveShouldSetPanResponder: () => true,
     onPanResponderMove: (_, gestureState) => {
       scrollY.setValue(clamp(scrollY._value - gestureState.dy, 0, maxScrollY.current));
@@ -430,13 +421,16 @@ function CardsList(props) {
   const onLayout = e => {
     setListHeight(e.nativeEvent.layout.height - screenHeight);
     maxScrollY.current = e.nativeEvent.layout.height - screenHeight + 70;
+    console.log("maxScrollY", maxScrollY.current);
   };
-  return createElement(React.Fragment, null, createElement(View, _extends({}, panResponder.panHandlers, {
+  return createElement(React.Fragment, null, createElement(View, {
+    s: true,
     onLayout: onLayout,
     style: {
-      padding: 10
+      padding: 10,
+      paddingTop: 500
     }
-  }), createElement(Card, {
+  }, createElement(Card, {
     key: 1,
     card: props.cardImage.image,
     index: 1,

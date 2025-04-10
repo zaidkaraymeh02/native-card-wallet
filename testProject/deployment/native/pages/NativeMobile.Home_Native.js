@@ -30,6 +30,12 @@ const placeholder$Main = () => [
                 cardImage={NativeStaticImageProperty({
                     "image": NativeMobile$Image_collection$Card_Infinite$png
                 })}
+                infiniteCard={undefined}
+                platinumCard={undefined}
+                goldCard={undefined}
+                classicCard={undefined}
+                normalDebitCard={undefined}
+                vipDebitCard={undefined}
                 style={NativeStyleProperty({
                     "styles": [ styles.khaleeji_nativecardwallet_NativeCardWallet ]
                 })} />
