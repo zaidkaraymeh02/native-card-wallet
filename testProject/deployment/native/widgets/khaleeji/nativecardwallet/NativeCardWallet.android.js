@@ -326,7 +326,7 @@ function Card({
         }).start();
       } else if (value === index) {
         Animated.timing(translateY, {
-          toValue: -(screenHeight - cardHeight - 450 + index * 1.5 * cardHeight * 0.3),
+          toValue: -(screenHeight - cardHeight - 450 + index * 1.6 * cardHeight * 0.3),
           duration: 500,
           easing: Easing.out(Easing.quad),
           useNativeDriver: true
@@ -345,7 +345,7 @@ function Card({
     };
   }, [cardHeight]);
   const handleTap = () => {
-    activeCardIndex.setValue(activeCardIndex._value === -1 ? index : -1);
+    activeCardIndex._value === -1 ? activeCardIndex.setValue(activeCardIndex._value === -1 ? index : -1) : () => {};
   };
   return createElement(TouchableWithoutFeedback, {
     onPress: handleTap

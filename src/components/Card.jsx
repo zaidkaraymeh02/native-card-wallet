@@ -31,7 +31,7 @@ export function  Card ({ card, index, scrollY, activeCardIndex })  {
         }).start();
     } else if (value === index) {
         Animated.timing(translateY, {
-            toValue: -(screenHeight - cardHeight - 450 + (index * 1.5) * cardHeight * 0.3),
+            toValue: -(screenHeight - cardHeight - 450 + (index * 1.6) * cardHeight * 0.3),
             duration: 500,
             easing: Easing.out(Easing.quad),
             useNativeDriver: true,
@@ -52,7 +52,10 @@ export function  Card ({ card, index, scrollY, activeCardIndex })  {
   }, [cardHeight]);
 
   const handleTap = () => {
-    activeCardIndex.setValue(activeCardIndex._value === -1 ? index : -1);
+    activeCardIndex._value === -1 ?
+      activeCardIndex.setValue(activeCardIndex._value === -1 ? index : -1)
+      : () => {}
+       
   };
 
   return (

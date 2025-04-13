@@ -262,7 +262,7 @@ startApp({
         NativeUI.registerPage("NativeMobile.Home_Native", ()=> require("C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native/pages/NativeMobile.Home_Native"), {"sidebar":false,"showBottomBar":true,"type":"Default"});
     },
     "animationEnabled": true,
-    "deploymentID": "638798943004481059",
+    "deploymentID": "638801333607810411",
     "checkForOTAUpdates": false,
     "loggingEnabled": false,
     "encryptionDbEnabled": false,

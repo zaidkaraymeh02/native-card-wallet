@@ -17,15 +17,15 @@ import NativeMobile$Image_collection$Card_Infinite$png from "C:/Users/zf_karayme
 const { $Container, $khaleeji_nativecardwallet_NativeCardWallet } = asPluginWidgets({ Container, khaleeji_nativecardwallet_NativeCardWallet });
 
 const placeholder$Main = () => [
-    <$Container key="p1.NativeMobile.Home_Native.container5"
-        $widgetId="p1.NativeMobile.Home_Native.container5"
+    <$Container key="p5.NativeMobile.Home_Native.container5"
+        $widgetId="p5.NativeMobile.Home_Native.container5"
         style={NativeStyleProperty({
             "styles": [ styles.Container, styles.flexMain, styles.alignChildrenCenter, styles.justifyContentCenter, styles.spacingInnerLeftMedium, styles.spacingInnerRightMedium, styles.backgroundPrimary ]
         })}
         onClick={undefined}
         content={[
-            <$khaleeji_nativecardwallet_NativeCardWallet key="p1.NativeMobile.Home_Native.nativeCardWallet1"
-                $widgetId="p1.NativeMobile.Home_Native.nativeCardWallet1"
+            <$khaleeji_nativecardwallet_NativeCardWallet key="p5.NativeMobile.Home_Native.nativeCardWallet1"
+                $widgetId="p5.NativeMobile.Home_Native.nativeCardWallet1"
                 yourName={""}
                 cardImage={NativeStaticImageProperty({
                     "image": NativeMobile$Image_collection$Card_Infinite$png

@@ -1,1 +1,1 @@
-[rtlauncher:container$] INFO Container start took 2087. Ready to accept admin requests.
+[rtlauncher:container$] INFO Container start took 1835. Ready to accept admin requests.
