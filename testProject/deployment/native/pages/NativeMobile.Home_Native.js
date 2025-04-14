@@ -1,6 +1,7 @@
 import { createElement } from "react";
 const React = { createElement };
 
+import { NanoflowObjectListProperty } from "mendix/NanoflowObjectListProperty";
 import { NativeStaticImageProperty } from "mendix/NativeStaticImageProperty";
 import { NativeStyleProperty } from "mendix/NativeStyleProperty";
 
@@ -36,6 +37,13 @@ const placeholder$Main = () => [
                 classicCard={undefined}
                 normalDebitCard={undefined}
                 vipDebitCard={undefined}
+                buttonAction={undefined}
+                data={NanoflowObjectListProperty({
+                    "argMap": {},
+                    "dataSourceId": "p5.4",
+                    "entity": "NativeMobile.Card",
+                    "source": { "nanoflow": () => require("C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native/nanoflows/NativeMobile.DS_GetCards").DS_GetCards }
+                })}
                 style={NativeStyleProperty({
                     "styles": [ styles.khaleeji_nativecardwallet_NativeCardWallet ]
                 })} />

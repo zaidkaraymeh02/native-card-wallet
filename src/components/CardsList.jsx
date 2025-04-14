@@ -1,4 +1,4 @@
-import React, { useState, useRef, createElement } from 'react';
+import React, { useState, useRef, createElement, FlatList } from 'react';
 import { View, useWindowDimensions, Animated, PanResponder, Text } from 'react-native';
 import FastImageComponent, { Source } from "react-native-fast-image";
 import { Card } from './Card'; // Assuming Card is in the same directory
@@ -14,7 +14,11 @@ import { Card } from './Card'; // Assuming Card is in the same directory
 //   require('../assets/Card 9.png'),
 // ];
 
-const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+}
+  
 
 export function CardsList(props) {
   const [listHeight, setListHeight] = useState(0);
@@ -23,6 +27,9 @@ export function CardsList(props) {
   const activeCardIndex = useRef(new Animated.Value(-1)).current;
   const scrollY = useRef(new Animated.Value(0)).current;
   const maxScrollY = useRef(0);
+
+  const {items} = props;
+  console.log("ITEMS", items)
 
   const panResponder = useRef(
     PanResponder.create({
@@ -42,11 +49,13 @@ export function CardsList(props) {
     })
   ).current;
 
-  const onLayout = (e) => {
-    setListHeight(e.nativeEvent.layout.height - screenHeight);
-    maxScrollY.current = e.nativeEvent.layout.height - screenHeight + 70;
-    console.log("maxScrollY", maxScrollY.current);
-  };
+  
+  function onLayout(e) {
+      setListHeight(e.nativeEvent.layout.height - screenHeight);
+      maxScrollY.current = e.nativeEvent.layout.height - screenHeight + 70;
+      console.log("maxScrollY", maxScrollY.current);
+    }
+  
 
   return (
     <>
@@ -56,7 +65,32 @@ export function CardsList(props) {
       style={{ padding: 10, paddingTop: 500 }}
     >
     {/* <Text>{JSON.stringify(props, null, 2)}</Text> */}
-    <Card
+
+    {/* <FlatList 
+      data={items}
+      renderItem={({ item }) => (
+        <Text>{{item}}</Text>
+        // <FastImageComponent
+        //   source={item.image}
+        //   resizeMode={"contain"}
+        //   style={{ width: 100, height: 100 }}
+        // />
+      )}
+      keyExtractor={(item, index) => index.toString()}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      scrollEnabled={false}
+    /> */}
+    {items.map((card, index) => (
+        <Card
+          key={index}
+          card={props.cardImage.image}
+          index={index}
+          scrollY={scrollY}
+          activeCardIndex={activeCardIndex}
+        />
+      ))}
+    {/* <Card
       key={1}
       card={props.cardImage.image}
       index={1}
@@ -85,7 +119,7 @@ export function CardsList(props) {
       index={4}
       scrollY={scrollY}
       activeCardIndex={activeCardIndex}
-    />
+    /> */}
     
       {/* {cards.map((card, index) => (
         <Card

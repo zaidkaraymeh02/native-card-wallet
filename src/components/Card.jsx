@@ -2,7 +2,11 @@ import React, { useEffect, useState, createElement } from 'react';
 import { Animated, Easing, StyleSheet, View, TouchableWithoutFeedback, useWindowDimensions } from 'react-native';
 import FastImageComponent, { Source } from "react-native-fast-image";
 const AnimatedFastImage = Animated.createAnimatedComponent(FastImageComponent);
-const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+  
 
 export function  Card ({ card, index, scrollY, activeCardIndex })  {
   const [cardHeight, setCardHeight] = useState(0);
@@ -31,7 +35,7 @@ export function  Card ({ card, index, scrollY, activeCardIndex })  {
         }).start();
     } else if (value === index) {
         Animated.timing(translateY, {
-            toValue: -(screenHeight - cardHeight - 450 + (index * 1.6) * cardHeight * 0.3),
+            toValue: -(screenHeight - cardHeight - 350 + (index * 1.6) * cardHeight * 0.3),
             duration: 500,
             easing: Easing.out(Easing.quad),
             useNativeDriver: true,
@@ -51,12 +55,15 @@ export function  Card ({ card, index, scrollY, activeCardIndex })  {
     };
   }, [cardHeight]);
 
-  const handleTap = () => {
-    activeCardIndex._value === -1 ?
-      activeCardIndex.setValue(activeCardIndex._value === -1 ? index : -1)
-      : () => {}
-       
-  };
+  
+function handleTap() {
+   if (activeCardIndex._value === -1) {
+     activeCardIndex.setValue(activeCardIndex._value === -1 ? index : -1);
+   } else {
+     // Do nothing
+   }
+  }
+  
 
   return (
     <TouchableWithoutFeedback onPress={handleTap} >

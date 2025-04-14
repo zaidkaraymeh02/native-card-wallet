@@ -51,6 +51,15 @@ public class Cards implements com.mendix.systemwideinterfaces.core.IEntityProxy
 		return nativemobile.proxies.Cards.initialize(context, mendixObject);
 	}
 
+	public static java.util.List<nativemobile.proxies.Cards> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
+	{
+		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
+			.execute(context)
+			.stream()
+			.map(obj -> nativemobile.proxies.Cards.initialize(context, obj))
+			.collect(java.util.stream.Collectors.toList());
+	}
+
 	@java.lang.Override
 	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{

@@ -43,5 +43,17 @@
                 <description />
             </property>
         </propertyGroup>
+        <propertyGroup caption="Datasource">
+            <property key="data" type="datasource" isList="true" required="false">
+                <caption>Card List</caption>
+                <description >Cards to be displayed</description>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Events">
+            <property key="buttonAction" type="action">
+                <caption>On click</caption>
+                <description>Action to be performed when button is clicked</description>
+            </property>
+        </propertyGroup>
     </properties>
 </widget>

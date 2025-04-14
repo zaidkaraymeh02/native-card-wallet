@@ -6,73 +6,85 @@ export const DS_GetCards = {
     {
       "type": "createObject",
       "label": "f6f1e697-8d08-44ce-ae23-eda22b09ace7",
+      "operationId": "igjFfWedqUmfXWBTQbi+lA",
       "objectType": "NativeMobile.Cards",
       "outputVar": "NewCards"
     },
     {
-      "type": "commitObjects",
-      "operationId": "nuKPKYVSxEqDUUB7BlKSPg",
-      "inputVar": "NewCards"
-    },
-    {
-      "type": "createObject",
+      "type": "tryCatch",
       "label": "aeceb562-5a5d-4da4-a421-d33920ddc7c6",
-      "objectType": "NativeMobile.Card",
-      "outputVar": "NewCard"
+      "catchTarget": "6f3b9f9b-56ce-41f8-bdb1-aef7d3d8c5ca",
+      "body": [
+        {
+          "type": "createObject",
+          "operationId": "2pyMhNEm9k6W1eoqxU7NkQ",
+          "objectType": "NativeMobile.Card",
+          "outputVar": "NewCard"
+        },
+        {
+          "type": "changeObject",
+          "inputVar": "NewCard",
+          "member": "CardNumber",
+          "value": {
+            "type": "literal",
+            "value": "1234 5678 9012 3456"
+          }
+        },
+        {
+          "type": "changeObject",
+          "inputVar": "NewCard",
+          "member": "CVV",
+          "value": {
+            "type": "literal",
+            "value": "123"
+          }
+        },
+        {
+          "type": "changeObject",
+          "inputVar": "NewCard",
+          "member": "ExpiryDate",
+          "value": {
+            "type": "literal",
+            "value": "12/26"
+          }
+        },
+        {
+          "type": "changeObject",
+          "inputVar": "NewCard",
+          "member": "NameOnCard",
+          "value": {
+            "type": "literal",
+            "value": "Zaid Karaymeh"
+          }
+        },
+        {
+          "type": "changeObject",
+          "inputVar": "NewCard",
+          "member": "NativeMobile.Card_Cards",
+          "value": {
+            "type": "variable",
+            "variable": "NewCards"
+          }
+        },
+        {
+          "type": "return",
+          "result": {
+            "type": "literal",
+            "value": true
+          },
+          "resultKind": "primitive"
+        }
+      ]
     },
     {
-      "type": "changeObject",
-      "inputVar": "NewCard",
-      "member": "CardNumber",
-      "value": {
-        "type": "literal",
-        "value": "1234 5678 9012 3456"
-      }
-    },
-    {
-      "type": "changeObject",
-      "inputVar": "NewCard",
-      "member": "CVV",
-      "value": {
-        "type": "literal",
-        "value": "123"
-      }
-    },
-    {
-      "type": "changeObject",
-      "inputVar": "NewCard",
-      "member": "ExpiryDate",
-      "value": {
-        "type": "literal",
-        "value": "12/26"
-      }
-    },
-    {
-      "type": "changeObject",
-      "inputVar": "NewCard",
-      "member": "NameOnCard",
-      "value": {
-        "type": "literal",
-        "value": "Zaid Karaymeh"
-      }
-    },
-    {
-      "type": "changeObject",
-      "inputVar": "NewCard",
-      "member": "NativeMobile.Card_Cards",
-      "value": {
-        "type": "variable",
-        "variable": "NewCards"
-      }
-    },
-    {
-      "type": "commitObjects",
-      "operationId": "2X2q7djlqE+XYbsbvUR7GA",
-      "inputVar": "NewCard"
+      "type": "jump",
+      "label": "2de8344a-1eb9-4ffa-93da-facd6cae5430",
+      "target": "3f5758e2-37cf-41ef-8f5a-36f58c1c7958"
     },
     {
       "type": "createObject",
       "label": "3f5758e2-37cf-41ef-8f5a-36f58c1c7958",
+      "operationId": "5WKMNwpyPk6JKj4y5B4+1Q",
       "objectType": "NativeMobile.Card",
       "outputVar": "NewCard_1"
     },
@@ -122,13 +134,9 @@ export const DS_GetCards = {
       }
     },
     {
-      "type": "commitObjects",
-      "operationId": "NEpNWfiC/USE/gSG6/drIA",
-      "inputVar": "NewCard_1"
-    },
-    {
       "type": "createObject",
       "label": "537f3805-55a6-44c2-948d-04403ae727a1",
+      "operationId": "C8qClywppkycK+X0ioLo1A",
       "objectType": "NativeMobile.Card",
       "outputVar": "NewCard_2"
     },
@@ -178,13 +186,9 @@ export const DS_GetCards = {
       }
     },
     {
-      "type": "commitObjects",
-      "operationId": "S40O2UVwQE+3lXxhq8KV8w",
-      "inputVar": "NewCard_2"
-    },
-    {
       "type": "createObject",
       "label": "7b8efaf2-c13e-406b-8d46-692974cba7ec",
+      "operationId": "6u9hU+xypEeUzSu7oIynZA",
       "objectType": "NativeMobile.Card",
       "outputVar": "NewCard_3"
     },
@@ -234,17 +238,13 @@ export const DS_GetCards = {
       }
     },
     {
-      "type": "commitObjects",
-      "operationId": "WznqzEjUaU6bpTR2dTH6HA",
-      "inputVar": "NewCard_3"
-    },
-    {
       "type": "associationRetrieve",
       "label": "cc8fb772-ed08-4f7c-b792-cad12b3499a0",
       "inputVar": "NewCards",
       "association": "NativeMobile.Card_Cards",
       "direction": "reverse",
       "entity": "NativeMobile.Card",
+      "operationId": "lwzZ0xIA7EeZd6tziCmTAA",
       "retrieveSingleObject": false,
       "outputVar": "CardList"
     },
@@ -256,6 +256,20 @@ export const DS_GetCards = {
         "variable": "CardList"
       },
       "resultKind": "list"
+    },
+    {
+      "type": "writeLog",
+      "label": "6f3b9f9b-56ce-41f8-bdb1-aef7d3d8c5ca",
+      "level": "info",
+      "message": {
+        "type": "variable",
+        "variable": "latestError"
+      }
+    },
+    {
+      "type": "jump",
+      "label": "2de8344a-1eb9-4ffa-93da-facd6cae5430",
+      "target": "3f5758e2-37cf-41ef-8f5a-36f58c1c7958"
     }
   ]
 };
