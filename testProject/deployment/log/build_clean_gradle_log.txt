@@ -1,7 +1,7 @@
 Initialized native services in: C:\Users\zf_karaymeh\.gradle\native
 Initialized jansi services in: C:\Users\zf_karaymeh\.gradle\native
 The client will now receive all logging from the daemon (pid: 18784). The daemon log file: C:\Users\zf_karaymeh\.gradle\daemon\8.13\daemon-18784.out.log
-Starting 21st build in daemon [uptime: 1 hrs 0 mins 56.964 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 19% of 384 MiB]
+Starting 38th build in daemon [uptime: 2 hrs 33 mins 10.87 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 24% of 384 MiB]
 Using 32 worker leases.
 Now considering [C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment] as hierarchies to watch
 Watching the file system is configured to be enabled if available
@@ -19,7 +19,7 @@ Selected primary task 'clean' from project :
 Tasks to be executed: [task ':clean']
 Tasks that were excluded: []
 Resolve mutations for :clean (Thread[Execution worker,5,main]) started.
-:clean (Thread[Execution worker,5,main]) started.
+:clean (Thread[Execution worker Thread 17,5,main]) started.
 
 > Task :clean UP-TO-DATE
 Caching disabled for task ':clean' because:
@@ -35,7 +35,7 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 939ms
+BUILD SUCCESSFUL in 912ms
 1 actionable task: 1 up-to-date
 Watched directory hierarchies: [C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment]
 

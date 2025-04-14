@@ -35,14 +35,14 @@ export function  Card ({ card, index, scrollY, activeCardIndex })  {
         }).start();
     } else if (value === index) {
         Animated.timing(translateY, {
-            toValue: -(screenHeight - cardHeight - 350 + (index * 1.6) * cardHeight * 0.3),
+            toValue: -(screenHeight - cardHeight - 600 + (index * 1.6) * cardHeight * 0.3),
             duration: 500,
             easing: Easing.out(Easing.quad),
             useNativeDriver: true,
         }).start();
     } else {
         await Animated.timing(translateY, {
-            toValue: -index * cardHeight * 0.3 + screenHeight * 0.7,
+            toValue: -index * cardHeight * 0.3 + screenHeight * 0.9,
             duration: 500,
             easing: Easing.out(Easing.quad),
             useNativeDriver: true,

@@ -76,15 +76,6 @@ public class Card implements com.mendix.systemwideinterfaces.core.IEntityProxy
 		return nativemobile.proxies.Card.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<nativemobile.proxies.Card> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
-	{
-		return com.mendix.core.Core.createXPathQuery(String.format("//%1$s%2$s", entityName, xpathConstraint))
-			.execute(context)
-			.stream()
-			.map(obj -> nativemobile.proxies.Card.initialize(context, obj))
-			.collect(java.util.stream.Collectors.toList());
-	}
-
 	/**
 	 * @return value of CardNumber
 	 */

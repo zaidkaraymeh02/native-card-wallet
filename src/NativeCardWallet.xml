@@ -48,6 +48,10 @@
                 <caption>Card List</caption>
                 <description >Cards to be displayed</description>
             </property>
+            <property key="cardContext" type="datasource" isList="true" required="false">
+                <caption>Card Context</caption>
+                <description />
+            </property>
         </propertyGroup>
         <propertyGroup caption="Events">
             <property key="buttonAction" type="action">

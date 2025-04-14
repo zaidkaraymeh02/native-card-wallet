@@ -241,28 +241,17 @@ startApp({
     "navigationStyle": navigationStyle,
     "homePages": {
         "defaultHomePage": {
-            "type": "page",
-            "page": "NativeMobile.Home_Native"
+            "type": "nanoflow",
+            "nanoflow": () => require("C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native/nanoflows/NativeMobile.ACT_Homepage_Setup").ACT_Homepage_Setup
         },
         "roleBasedHomePages": []
     },
-    "getBottomBarItems": () => ( [
-        {
-            "pageName": "NativeMobile.Home_Native",
-            "caption": t([
-                "Home"
-            ]),
-            "icon": {
-                "type": "glyph",
-                "iconClass": "glyphicon-home"
-            }
-        }
-    ] ),
+    "getBottomBarItems": () => ( [] ),
     "registerPages": () => {
-        NativeUI.registerPage("NativeMobile.Home_Native", ()=> require("C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native/pages/NativeMobile.Home_Native"), {"sidebar":false,"showBottomBar":true,"type":"Default"});
+        NativeUI.registerPage("NativeMobile.Home_Native", ()=> require("C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native/pages/NativeMobile.Home_Native"), {"sidebar":false,"showBottomBar":false,"type":"Default"});
     },
     "animationEnabled": true,
-    "deploymentID": "638802242782451091",
+    "deploymentID": "638802283996018158",
     "checkForOTAUpdates": false,
     "loggingEnabled": false,
     "encryptionDbEnabled": false,

@@ -42,7 +42,15 @@ const placeholder$Main = () => [
                     "argMap": {},
                     "dataSourceId": "p5.4",
                     "entity": "NativeMobile.Card",
+                    "scope": "$CardContext",
                     "source": { "nanoflow": () => require("C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native/nanoflows/NativeMobile.DS_GetCards").DS_GetCards }
+                })}
+                cardContext={NanoflowObjectListProperty({
+                    "argMap": { "CardContext": { "widget": "$CardContext", "source": "object" } },
+                    "dataSourceId": "p5.5",
+                    "entity": "NativeMobile.CardContext",
+                    "scope": "$CardContext",
+                    "source": { "nanoflow": () => require("C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native/nanoflows/NativeMobile.DS_GetCardContext").DS_GetCardContext }
                 })}
                 style={NativeStyleProperty({
                     "styles": [ styles.khaleeji_nativecardwallet_NativeCardWallet ]
@@ -57,7 +65,7 @@ export const $$title = t([
 
 export const $$style = [ styles.Layout, styles.Page ];
 
-export const $$parameters = [];
+export const $$parameters = ["CardContext"];
 export const $$page = () => mainContent(placeholder$Main);
 
 export const $$sidebar = () => sidebar();

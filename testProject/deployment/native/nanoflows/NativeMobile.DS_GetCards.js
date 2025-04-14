@@ -6,7 +6,6 @@ export const DS_GetCards = {
     {
       "type": "createObject",
       "label": "f6f1e697-8d08-44ce-ae23-eda22b09ace7",
-      "operationId": "igjFfWedqUmfXWBTQbi+lA",
       "objectType": "NativeMobile.Cards",
       "outputVar": "NewCards"
     },
@@ -17,7 +16,6 @@ export const DS_GetCards = {
       "body": [
         {
           "type": "createObject",
-          "operationId": "2pyMhNEm9k6W1eoqxU7NkQ",
           "objectType": "NativeMobile.Card",
           "outputVar": "NewCard"
         },
@@ -84,7 +82,6 @@ export const DS_GetCards = {
     {
       "type": "createObject",
       "label": "3f5758e2-37cf-41ef-8f5a-36f58c1c7958",
-      "operationId": "5WKMNwpyPk6JKj4y5B4+1Q",
       "objectType": "NativeMobile.Card",
       "outputVar": "NewCard_1"
     },
@@ -136,7 +133,6 @@ export const DS_GetCards = {
     {
       "type": "createObject",
       "label": "537f3805-55a6-44c2-948d-04403ae727a1",
-      "operationId": "C8qClywppkycK+X0ioLo1A",
       "objectType": "NativeMobile.Card",
       "outputVar": "NewCard_2"
     },
@@ -188,7 +184,6 @@ export const DS_GetCards = {
     {
       "type": "createObject",
       "label": "7b8efaf2-c13e-406b-8d46-692974cba7ec",
-      "operationId": "6u9hU+xypEeUzSu7oIynZA",
       "objectType": "NativeMobile.Card",
       "outputVar": "NewCard_3"
     },
@@ -244,7 +239,6 @@ export const DS_GetCards = {
       "association": "NativeMobile.Card_Cards",
       "direction": "reverse",
       "entity": "NativeMobile.Card",
-      "operationId": "lwzZ0xIA7EeZd6tziCmTAA",
       "retrieveSingleObject": false,
       "outputVar": "CardList"
     },

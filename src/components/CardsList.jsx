@@ -81,7 +81,7 @@ export function CardsList(props) {
       showsHorizontalScrollIndicator={false}
       scrollEnabled={false}
     /> */}
-    {items.map((card, index) => (
+    {items ? items.map((card, index) => (
         <Card
           key={index}
           card={props.cardImage.image}
@@ -89,7 +89,7 @@ export function CardsList(props) {
           scrollY={scrollY}
           activeCardIndex={activeCardIndex}
         />
-      ))}
+      )) : <Text>Loading...</Text>}
     {/* <Card
       key={1}
       card={props.cardImage.image}

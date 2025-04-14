@@ -43,14 +43,14 @@ function Card({
         }).start();
       } else if (value === index) {
         Animated.timing(translateY, {
-          toValue: -(screenHeight - cardHeight - 350 + index * 1.6 * cardHeight * 0.3),
+          toValue: -(screenHeight - cardHeight - 600 + index * 1.6 * cardHeight * 0.3),
           duration: 500,
           easing: Easing.out(Easing.quad),
           useNativeDriver: true
         }).start();
       } else {
         await Animated.timing(translateY, {
-          toValue: -index * cardHeight * 0.3 + screenHeight * 0.7,
+          toValue: -index * cardHeight * 0.3 + screenHeight * 0.9,
           duration: 500,
           easing: Easing.out(Easing.quad),
           useNativeDriver: true
@@ -156,20 +156,20 @@ function CardsList(props) {
       padding: 10,
       paddingTop: 500
     }
-  }, items.map((card, index) => createElement(Card, {
+  }, items ? items.map((card, index) => createElement(Card, {
     key: index,
     card: props.cardImage.image,
     index: index,
     scrollY: scrollY,
     activeCardIndex: activeCardIndex
-  }))));
+  })) : createElement(Text, null, "Loading...")));
 }
 
 function NativeCardWallet(props) {
   console.log("PROPS", props);
   useEffect(() => {
     console.log("mydata", props.data);
-  }, [props.data]);
+  }, [props.data, props.cardContext]);
   // const cards = props.datasource;
   // console.log("ITEMS", cards)
   return createElement(GestureHandlerRootView, {
@@ -178,10 +178,11 @@ function NativeCardWallet(props) {
     }
   }, createElement(SafeAreaProvider, null, createElement(SafeAreaView, {
     style: {
-      flex: 1
+      flex: 1,
+      marginTop: -250
     }
-  }, props.data.status === 'available' ? createElement(CardsList, {
-    items: props.data.items ?? [],
+  }, props.data.status === 'available' && props.cardContext.status === 'available' ? createElement(CardsList, {
+    items: props.data.items,
     cardImage: {
       type: "staticImage",
       // Static image
