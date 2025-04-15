@@ -21,8 +21,7 @@ public class CardContext implements com.mendix.systemwideinterfaces.core.IEntity
 	public enum MemberNames
 	{
 		IsCardSelected("IsCardSelected"),
-		SelectedCardIndex("SelectedCardIndex"),
-		CardContext_CardContext("NativeMobile.CardContext_CardContext");
+		SelectedCardIndex("SelectedCardIndex");
 
 		private final java.lang.String metaName;
 
@@ -144,53 +143,6 @@ public class CardContext implements com.mendix.systemwideinterfaces.core.IEntity
 	public final void setSelectedCardIndex(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer selectedcardindex)
 	{
 		getMendixObject().setValue(context, MemberNames.SelectedCardIndex.toString(), selectedcardindex);
-	}
-
-	/**
-	 * @throws com.mendix.core.CoreException
-	 * @return value of CardContext_CardContext
-	 */
-	public final nativemobile.proxies.CardContext getCardContext_CardContext() throws com.mendix.core.CoreException
-	{
-		return getCardContext_CardContext(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of CardContext_CardContext
-	 * @throws com.mendix.core.CoreException
-	 */
-	public final nativemobile.proxies.CardContext getCardContext_CardContext(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
-	{
-		nativemobile.proxies.CardContext result = null;
-		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.CardContext_CardContext.toString());
-		if (identifier != null) {
-			result = nativemobile.proxies.CardContext.load(context, identifier);
-		}
-		return result;
-	}
-
-	/**
-	 * Set value of CardContext_CardContext
-	 * @param cardcontext_cardcontext
-	 */
-	public final void setCardContext_CardContext(nativemobile.proxies.CardContext cardcontext_cardcontext)
-	{
-		setCardContext_CardContext(getContext(), cardcontext_cardcontext);
-	}
-
-	/**
-	 * Set value of CardContext_CardContext
-	 * @param context
-	 * @param cardcontext_cardcontext
-	 */
-	public final void setCardContext_CardContext(com.mendix.systemwideinterfaces.core.IContext context, nativemobile.proxies.CardContext cardcontext_cardcontext)
-	{
-		if (cardcontext_cardcontext == null) {
-			getMendixObject().setValue(context, MemberNames.CardContext_CardContext.toString(), null);
-		} else {
-			getMendixObject().setValue(context, MemberNames.CardContext_CardContext.toString(), cardcontext_cardcontext.getMendixObject().getId());
-		}
 	}
 
 	@java.lang.Override

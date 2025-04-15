@@ -8,10 +8,23 @@ function clamp(value, min, max) {
 }
   
 
-export function  Card ({ card, index, scrollY, activeCardIndex })  {
+export function  Card ({ card, index, scrollY, activeCardIndex, onCardClick })  {
   const [cardHeight, setCardHeight] = useState(0);
   const { height: screenHeight } = useWindowDimensions();
   const translateY = new Animated.Value(0);
+
+  const promiseFunction = () => {
+    return new Promise((resolve) => {
+      Animated.timing(translateY, {
+        toValue: -(screenHeight - cardHeight - 600 + (index * 1.6) * cardHeight * 0.3),
+        duration: 500,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: true,
+    }).start();
+         
+    resolve(true);
+    });
+  }
 
   useEffect(() => {
     const listenerId = scrollY.addListener(({ value }) => {
@@ -34,12 +47,14 @@ export function  Card ({ card, index, scrollY, activeCardIndex })  {
           useNativeDriver: true,
         }).start();
     } else if (value === index) {
-        Animated.timing(translateY, {
-            toValue: -(screenHeight - cardHeight - 600 + (index * 1.6) * cardHeight * 0.3),
-            duration: 500,
-            easing: Easing.out(Easing.quad),
-            useNativeDriver: true,
-        }).start();
+        // await 
+        await promiseFunction();
+        // Wait for 2 seconds
+        // console.log("onCardClickProp", onCardClick)
+    // setTimeout(() => {onCardClick.execute();}, 2000);
+    setTimeout(() => {onCardClick({"activeCardIndex": activeCardIndex, "state": true, "position": -(screenHeight - cardHeight - 600 + (index * 1.6) * cardHeight * 0.3)});}, 2000);
+      // onCardClick();
+        
     } else {
         await Animated.timing(translateY, {
             toValue: -index * cardHeight * 0.3 + screenHeight * 0.9,
@@ -102,4 +117,3 @@ const styles = StyleSheet.create({
     // objectFit: 'contain',
   },
 });
-

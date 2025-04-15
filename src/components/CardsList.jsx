@@ -22,13 +22,14 @@ function clamp(value, min, max) {
 
 export function CardsList(props) {
   const [listHeight, setListHeight] = useState(0);
+  const [isCardSelected, setIsCardSelected] = useState({ "activateCardIndex": -1, "state":false, "position": 0});
   const { height: screenHeight } = useWindowDimensions();
 
   const activeCardIndex = useRef(new Animated.Value(-1)).current;
   const scrollY = useRef(new Animated.Value(0)).current;
   const maxScrollY = useRef(0);
 
-  const {items} = props;
+  const {items, content} = props;
   console.log("ITEMS", items)
 
   const panResponder = useRef(
@@ -56,13 +57,12 @@ export function CardsList(props) {
       console.log("maxScrollY", maxScrollY.current);
     }
   
-
   return (
     <>
     <View
     // {...panResponder.panHandlers}
       onLayout={onLayout}
-      style={{ padding: 10, paddingTop: 500 }}
+      style={{ padding: 10, paddingTop: isCardSelected.state ? 425 : 500 }}
     >
     {/* <Text>{JSON.stringify(props, null, 2)}</Text> */}
 
@@ -79,17 +79,36 @@ export function CardsList(props) {
       keyExtractor={(item, index) => index.toString()}
       horizontal
       showsHorizontalScrollIndicator={false}
-      scrollEnabled={false}
+      scrollEnabled={false} props.onCardClick.canExecute && 
     /> */}
-    {items ? items.map((card, index) => (
+    {isCardSelected.state ? (
+      <View>
         <Card
+          onCardClick={setIsCardSelected}
+          key={isCardSelected.activateCardIndex}
+          card={props.cardImage.image}
+          index={isCardSelected.activateCardIndex}
+          scrollY={scrollY}
+          activeCardIndex={activeCardIndex}
+        />
+          {content}
+        </View>
+    ) : items ? (
+      items.map((card, index) => (
+        <Card
+          onCardClick={setIsCardSelected}
           key={index}
           card={props.cardImage.image}
           index={index}
           scrollY={scrollY}
           activeCardIndex={activeCardIndex}
         />
-      )) : <Text>Loading...</Text>}
+      ))
+    ) : (
+      <Text>Loading...</Text>
+    )}
+
+      {/* {isCardSelected && {content}} */}
     {/* <Card
       key={1}
       card={props.cardImage.image}

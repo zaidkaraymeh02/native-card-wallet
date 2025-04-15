@@ -16,6 +16,10 @@
                 <caption>Background Image</caption>
                 <description>Image shown blurred in a background</description>
             </property>
+            <property key="content" type="widgets" required="false">
+                <caption>Content</caption>
+                <description>Content of a box</description>
+            </property>
         </propertyGroup>
         <propertyGroup caption="Cards">
             <property key="infiniteCard" type="image" required="false">
@@ -59,5 +63,6 @@
                 <description>Action to be performed when button is clicked</description>
             </property>
         </propertyGroup>
+        
     </properties>
 </widget>

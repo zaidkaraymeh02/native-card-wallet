@@ -5,7 +5,7 @@ export const DS_GetCardContext = {
   "instructions": [
     {
       "type": "setVariable",
-      "label": "2accead4-4c21-423d-a93b-763731b3ecc2",
+      "label": "a5c74d58-6c8e-4645-b518-271557267f14",
       "value": {
         "type": "function",
         "name": "_newList",
@@ -16,7 +16,7 @@ export const DS_GetCardContext = {
     },
     {
       "type": "setVariable",
-      "label": "06c31ef9-58dc-45c4-9c8c-45e08a0187ab",
+      "label": "275c3200-0182-4a5f-b945-b9d942a701fd",
       "value": {
         "type": "function",
         "name": "_addToList",
@@ -36,7 +36,7 @@ export const DS_GetCardContext = {
     },
     {
       "type": "return",
-      "label": "8efcb392-170e-4c1f-a201-65ee00a23f94",
+      "label": "b4bf6f52-b606-44d5-ae59-932262dbbf7a",
       "result": {
         "type": "variable",
         "variable": "CardContextList"

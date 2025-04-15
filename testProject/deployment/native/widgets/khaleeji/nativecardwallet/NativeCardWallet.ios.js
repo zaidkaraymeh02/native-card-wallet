@@ -12,13 +12,25 @@ function Card({
   card,
   index,
   scrollY,
-  activeCardIndex
+  activeCardIndex,
+  onCardClick
 }) {
   const [cardHeight, setCardHeight] = useState(0);
   const {
     height: screenHeight
   } = useWindowDimensions();
   const translateY = new Animated.Value(0);
+  const promiseFunction = () => {
+    return new Promise(resolve => {
+      Animated.timing(translateY, {
+        toValue: -(screenHeight - cardHeight - 600 + index * 1.6 * cardHeight * 0.3),
+        duration: 500,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: true
+      }).start();
+      resolve(true);
+    });
+  };
   useEffect(() => {
     const listenerId = scrollY.addListener(({
       value
@@ -42,12 +54,19 @@ function Card({
           useNativeDriver: true
         }).start();
       } else if (value === index) {
-        Animated.timing(translateY, {
-          toValue: -(screenHeight - cardHeight - 600 + index * 1.6 * cardHeight * 0.3),
-          duration: 500,
-          easing: Easing.out(Easing.quad),
-          useNativeDriver: true
-        }).start();
+        // await 
+        await promiseFunction();
+        // Wait for 2 seconds
+        // console.log("onCardClickProp", onCardClick)
+        // setTimeout(() => {onCardClick.execute();}, 2000);
+        setTimeout(() => {
+          onCardClick({
+            "activeCardIndex": activeCardIndex,
+            "state": true,
+            "position": -(screenHeight - cardHeight - 600 + index * 1.6 * cardHeight * 0.3)
+          });
+        }, 2000);
+        // onCardClick();
       } else {
         await Animated.timing(translateY, {
           toValue: -index * cardHeight * 0.3 + screenHeight * 0.9,
@@ -120,6 +139,11 @@ function clamp(value, min, max) {
 }
 function CardsList(props) {
   const [listHeight, setListHeight] = useState(0);
+  const [isCardSelected, setIsCardSelected] = useState({
+    "activateCardIndex": -1,
+    "state": false,
+    "position": 0
+  });
   const {
     height: screenHeight
   } = useWindowDimensions();
@@ -127,7 +151,8 @@ function CardsList(props) {
   const scrollY = useRef(new Animated.Value(0)).current;
   const maxScrollY = useRef(0);
   const {
-    items
+    items,
+    content
   } = props;
   console.log("ITEMS", items);
   useRef(PanResponder.create({
@@ -154,9 +179,17 @@ function CardsList(props) {
     onLayout: onLayout,
     style: {
       padding: 10,
-      paddingTop: 500
+      paddingTop: isCardSelected.state ? 425 : 500
     }
-  }, items ? items.map((card, index) => createElement(Card, {
+  }, isCardSelected.state ? createElement(View, null, createElement(Card, {
+    onCardClick: setIsCardSelected,
+    key: isCardSelected.activateCardIndex,
+    card: props.cardImage.image,
+    index: isCardSelected.activateCardIndex,
+    scrollY: scrollY,
+    activeCardIndex: activeCardIndex
+  }), content) : items ? items.map((card, index) => createElement(Card, {
+    onCardClick: setIsCardSelected,
     key: index,
     card: props.cardImage.image,
     index: index,
@@ -169,9 +202,11 @@ function NativeCardWallet(props) {
   console.log("PROPS", props);
   useEffect(() => {
     console.log("mydata", props.data);
-  }, [props.data, props.cardContext]);
+  }, [props.data, props.cardContext, props.content]);
   // const cards = props.datasource;
   // console.log("ITEMS", cards)
+  // console.log(props.)
+
   return createElement(GestureHandlerRootView, {
     style: {
       flex: 1
@@ -181,7 +216,9 @@ function NativeCardWallet(props) {
       flex: 1,
       marginTop: -250
     }
-  }, props.data.status === 'available' && props.cardContext.status === 'available' ? createElement(CardsList, {
+  }, props.data.status === 'available' && props.cardContext.status === 'available' && props.content ? createElement(CardsList, {
+    content: props.content,
+    onCardClick: props.buttonAction,
     items: props.data.items,
     cardImage: {
       type: "staticImage",
