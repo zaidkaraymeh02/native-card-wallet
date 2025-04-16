@@ -1,5 +1,5 @@
 import React, { useState, useRef, createElement, FlatList } from 'react';
-import { View, useWindowDimensions, Animated, PanResponder, Text } from 'react-native';
+import { View, useWindowDimensions, Animated, PanResponder, Text, ScrollView } from 'react-native';
 import FastImageComponent, { Source } from "react-native-fast-image";
 import { Card } from './Card'; // Assuming Card is in the same directory
 // const cards = [
@@ -62,7 +62,7 @@ export function CardsList(props) {
     <View
     // {...panResponder.panHandlers}
       onLayout={onLayout}
-      style={{ padding: 10, paddingTop: isCardSelected.state ? 425 : 500 }}
+      style={{ padding: 10, marginTop: 165 }}
     >
     {/* <Text>{JSON.stringify(props, null, 2)}</Text> */}
 

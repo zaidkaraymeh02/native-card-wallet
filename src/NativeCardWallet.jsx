@@ -17,8 +17,6 @@ export function NativeCardWallet(props) {
     return (
 
         <GestureHandlerRootView style={{ flex: 1 }}>
-            <SafeAreaProvider>
-                <SafeAreaView style={{ flex: 1, marginTop: -250 }}>
                 {props.data.status === 'available' && props.cardContext.status === 'available' && props.content? 
                     <CardsList  content={props.content} onCardClick={props.buttonAction} items={props.data.items} cardImage={{
                         type: "staticImage", // Static image
@@ -26,8 +24,6 @@ export function NativeCardWallet(props) {
                     }} />
                     : <Text>Loading...</Text>
                  }
-                </SafeAreaView>
-            </SafeAreaProvider>
         </GestureHandlerRootView>
 
     )

@@ -1,9 +1,9 @@
 Initialized native services in: C:\Users\zf_karaymeh\.gradle\native
 Initialized jansi services in: C:\Users\zf_karaymeh\.gradle\native
-The client will now receive all logging from the daemon (pid: 26052). The daemon log file: C:\Users\zf_karaymeh\.gradle\daemon\8.13\daemon-26052.out.log
-Starting 2nd build in daemon [uptime: 19.644 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 13% of 384 MiB]
+The client will now receive all logging from the daemon (pid: 3144). The daemon log file: C:\Users\zf_karaymeh\.gradle\daemon\8.13\daemon-3144.out.log
+Starting 7th build in daemon [uptime: 25 mins 29.896 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 24% of 384 MiB]
 Using 32 worker leases.
-Now considering [C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment] as hierarchies to watch
+Now considering [C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment, C:\Users\zf_karaymeh\Mendix\KHCB_Retail_Platform-feature_cards\deployment] as hierarchies to watch
 Watching the file system is configured to be enabled if available
 File system watching is active
 Starting Build
@@ -25,8 +25,8 @@ Tasks to be executed: [task ':clean-custom-classes', task ':compile', task ':pac
 Tasks that were excluded: []
 Resolve mutations for :clean-custom-classes (Thread[Execution worker,5,main]) started.
 :clean-custom-classes (Thread[Execution worker,5,main]) started.
-destroyer locations for task group 0 (Thread[Execution worker Thread 22,5,main]) started.
-destroyer locations for task group 1 (Thread[Execution worker Thread 25,5,main]) started.
+destroyer locations for task group 0 (Thread[Execution worker Thread 4,5,main]) started.
+destroyer locations for task group 1 (Thread[Execution worker Thread 4,5,main]) started.
 
 > Task :clean-custom-classes
 Caching disabled for task ':clean-custom-classes' because:
@@ -45,14 +45,13 @@ Task ':compile' is not up-to-date because:
   Output property 'destinationDirectory' file C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment\run\bin\administration\proxies has been removed.
   and more...
 The input changes require a full rebuild for incremental task ':compile'.
-Not watching anything anymore
 Compilation mode: in-process compilation
 file or directory 'C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\vendorlib', not found
 Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
 Compiling with toolchain 'C:\Program Files\Eclipse Adoptium\jdk-11.0.14.101-hotspot'.
 Compiling with JDK Java compiler API.
-Class dependency analysis for incremental compilation took 0.123 secs.
-Created classpath snapshot for incremental compilation in 0.03 secs.
+Class dependency analysis for incremental compilation took 0.072 secs.
+Created classpath snapshot for incremental compilation in 0.0 secs.
 Resolve mutations for :package (Thread[Execution worker,5,main]) started.
 :package (Thread[Execution worker,5,main]) started.
 
@@ -70,9 +69,9 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 3s
+BUILD SUCCESSFUL in 1s
 3 actionable tasks: 2 executed, 1 up-to-date
-Watched directory hierarchies: [C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment]
+Watched directory hierarchies: [C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment, C:\Users\zf_karaymeh\Mendix\KHCB_Retail_Platform-feature_cards\deployment]
 
 
 Note: Some input files use or override a deprecated API.

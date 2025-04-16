@@ -179,7 +179,7 @@ function CardsList(props) {
     onLayout: onLayout,
     style: {
       padding: 10,
-      paddingTop: isCardSelected.state ? 425 : 500
+      paddingTop: isCardSelected.state ? 424.8 : 500
     }
   }, isCardSelected.state ? createElement(View, null, createElement(Card, {
     onCardClick: setIsCardSelected,

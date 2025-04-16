@@ -16,7 +16,7 @@ export function  Card ({ card, index, scrollY, activeCardIndex, onCardClick })  
   const promiseFunction = () => {
     return new Promise((resolve) => {
       Animated.timing(translateY, {
-        toValue: -(screenHeight - cardHeight - 600 + (index * 1.6) * cardHeight * 0.3),
+        toValue: index > 6 ? -((index * 120 * 0.46) + 90) : -((index * 120 * 0.45) + 100),
         duration: 500,
         easing: Easing.out(Easing.quad),
         useNativeDriver: true,
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   image: {
-    marginTop: -120,
+    marginTop: -165,
     width: '100%',
     height: 'auto',
     aspectRatio: 343 / 218,

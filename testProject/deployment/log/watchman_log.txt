@@ -3172,3 +3172,61 @@
 2025-04-15T13:05:34,772: [io 1840170998640 C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules] crawl complete
 2025-04-15T13:05:37,572: [io 1840164692288 C:/Users/zf_karaymeh/Projects/nativeCardWallet] PERF: {"start_time": 1744711533.381238, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/zf_karaymeh/Projects/nativeCardWallet", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 37840, "elapsed_time": 4.1909520000000002}
 2025-04-15T13:05:37,572: [io 1840164692288 C:/Users/zf_karaymeh/Projects/nativeCardWallet] crawl complete
+2025-04-15T13:05:46,411: [client=3:stm=1840205156416:pid=0] PERF: {"start_time": 1744711545.3704669, "version": "4.9.4", "description": "dispatch_command:query", "meta": {"root": {"path": "C:/Users/zf_karaymeh/Projects/nativeCardWallet", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}, "args": ["query", "C:/Users/zf_karaymeh/Projects/nativeCardWallet", {"fields": ["name", "exists", "mtime_ms", "size", "content.sha1hex", "type"], "glob": ["testProject/deployment/native/**", "testProject/theme/**", "testProject/javascriptsource/**", "testProject/themesource/**"], "expression": ["anyof", ["allof", ["type", "f"], ["suffix", ["js", "jsx", "ts", "tsx", "cjs", "mjs", "json", "js_commonjs-exports", "js_commonjs-module", "bmp", "gif", "jpg", "jpeg", "png", "psd", "svg", "webp", "m4v", "mov", "mp4", "mpeg", "mpg", "webm", "aac", "aiff", "caf", "m4a", "mp3", "wav", "html", "pdf", "yaml", "yml", "otf", "ttf", "zip"]]], ["type", "l"]], "glob_includedotfiles": true}], "client": {"pid": 0}}, "pid": 37840, "elapsed_time": 1.0412939999999999}
+2025-04-15T13:05:46,432: [client=3:stm=1840205156416:pid=0] PERF: {"start_time": 1744711546.4317601, "version": "4.9.4", "description": "sync_to_now", "meta": {"root": {"path": "C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}, "sync_to_now": {"success": false, "reason": "root dir was removed or is inaccessible", "timeoutms": 60000}}, "pid": 37840, "elapsed_time": 0.001}
+2025-04-15T13:05:46,432: [readchange C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules] signalled
+2025-04-15T13:05:46,437: [client=3:stm=1840205156416:pid=0] send_error_response: ["query", "C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules", {"fields": ["name", "exists", "mtime_ms", "size", "content.sha1hex", "type"], "expression": ["anyof", ["allof", ["type", "f"], ["suffix", ["js", "jsx", "ts", "tsx", "cjs", "mjs", "json", "js_commonjs-exports", "js_commonjs-module", "bmp", "gif", "jpg", "jpeg", "png", "psd", "svg", "webp", "m4v", "mov", "mp4", "mpeg", "mpg", "webm", "aac", "aiff", "caf", "m4a", "mp3", "wav", "html", "pdf", "yaml", "yml", "otf", "ttf", "zip"]]], ["type", "l"]]}], failed: query failed: synchronization failed: root dir was removed or is inaccessible
+2025-04-15T13:05:47,497: [client=12:stm=1840220207776:pid=0] path C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules is on filesystem type NTFS
+2025-04-15T13:05:47,498: [client=12:stm=1840220207776:pid=0] root C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules using watcher mechanism win32 (auto was requested)
+2025-04-15T13:05:48,033: [io 1840227577488 C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules] PERF: {"start_time": 1744711547.499109, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 37840, "elapsed_time": 0.534327}
+2025-04-15T13:05:48,033: [io 1840227577488 C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules] crawl complete
+2025-04-16T09:49:18,248: [listener] Watchman 4.9.4 <no build info set> starting up on zfkaraymeh-pc
+2025-04-16T09:49:18,260: [listener] path C:/Users/zf_karaymeh/Projects/nativeCardWallet is on filesystem type NTFS
+2025-04-16T09:49:18,261: [listener] root C:/Users/zf_karaymeh/Projects/nativeCardWallet using watcher mechanism win32 (auto was requested)
+2025-04-16T09:49:18,261: [listener] path C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules is on filesystem type NTFS
+2025-04-16T09:49:18,262: [listener] root C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules using watcher mechanism win32 (auto was requested)
+2025-04-16T09:49:18,264: [accept0] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,265: [accept1] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,265: [accept2] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,265: [accept3] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,265: [accept4] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,265: [accept5] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,265: [accept6] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,265: [accept7] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,265: [accept8] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,266: [accept9] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,266: [accept10] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,266: [accept11] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,266: [accept12] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,266: [accept13] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,266: [accept14] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,266: [accept15] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,266: [accept16] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,266: [accept17] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,266: [accept18] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,266: [accept19] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,266: [accept20] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,266: [accept21] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,267: [accept22] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,267: [accept23] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,267: [accept24] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,267: [accept25] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,267: [accept26] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,267: [accept27] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,267: [accept28] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,267: [accept29] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,267: [accept30] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,267: [accept31] waiting for pipe clients on \\.\pipe\watchman-zf_karaymeh
+2025-04-16T09:49:18,871: [io 1646371791744 C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules] PERF: {"start_time": 1744786158.263984, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 33140, "elapsed_time": 0.60724900000000004}
+2025-04-16T09:49:18,871: [io 1646371791744 C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules] crawl complete
+2025-04-16T09:49:22,045: [io 1646371439872 C:/Users/zf_karaymeh/Projects/nativeCardWallet] PERF: {"start_time": 1744786158.2619829, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Users/zf_karaymeh/Projects/nativeCardWallet", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 33140, "elapsed_time": 3.7837809999999998}
+2025-04-16T09:49:22,045: [client=3:stm=1646404075568:pid=0] PERF: {"start_time": 1744786159.7185359, "version": "4.9.4", "description": "dispatch_command:watch-project", "meta": {"root": {"path": "C:/Users/zf_karaymeh/Projects/nativeCardWallet", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}, "args": ["watch-project", "C:/Users/zf_karaymeh/Projects/nativeCardWallet"], "client": {"pid": 0}}, "pid": 33140, "elapsed_time": 2.3272279999999999}
+2025-04-16T09:49:22,045: [io 1646371439872 C:/Users/zf_karaymeh/Projects/nativeCardWallet] crawl complete
+2025-04-16T09:49:23,231: [client=3:stm=1646404075568:pid=0] PERF: {"start_time": 1744786162.0482759, "version": "4.9.4", "description": "dispatch_command:query", "meta": {"root": {"path": "C:/Users/zf_karaymeh/Projects/nativeCardWallet", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}, "args": ["query", "C:/Users/zf_karaymeh/Projects/nativeCardWallet", {"fields": ["name", "exists", "mtime_ms", "size", "content.sha1hex", "type"], "glob": ["testProject/deployment/native/**", "testProject/theme/**", "testProject/javascriptsource/**", "testProject/themesource/**"], "expression": ["anyof", ["allof", ["type", "f"], ["suffix", ["js", "jsx", "ts", "tsx", "cjs", "mjs", "json", "js_commonjs-exports", "js_commonjs-module", "bmp", "gif", "jpg", "jpeg", "png", "psd", "svg", "webp", "m4v", "mov", "mp4", "mpeg", "mpg", "webm", "aac", "aiff", "caf", "m4a", "mp3", "wav", "html", "pdf", "yaml", "yml", "otf", "ttf", "zip"]]], ["type", "l"]], "glob_includedotfiles": true}], "client": {"pid": 0}}, "pid": 33140, "elapsed_time": 1.183686}
+2025-04-16T09:49:23,246: [readchange C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules] signalled
+2025-04-16T09:49:23,246: [client=3:stm=1646404075568:pid=0] PERF: {"start_time": 1744786163.2454791, "version": "4.9.4", "description": "sync_to_now", "meta": {"root": {"path": "C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}, "sync_to_now": {"success": false, "reason": "root dir was removed or is inaccessible", "timeoutms": 60000}}, "pid": 33140, "elapsed_time": 0.00099700000000000006}
+2025-04-16T09:49:23,248: [client=3:stm=1646404075568:pid=0] send_error_response: ["query", "C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules", {"fields": ["name", "exists", "mtime_ms", "size", "content.sha1hex", "type"], "expression": ["anyof", ["allof", ["type", "f"], ["suffix", ["js", "jsx", "ts", "tsx", "cjs", "mjs", "json", "js_commonjs-exports", "js_commonjs-module", "bmp", "gif", "jpg", "jpeg", "png", "psd", "svg", "webp", "m4v", "mov", "mp4", "mpeg", "mpg", "webm", "aac", "aiff", "caf", "m4a", "mp3", "wav", "html", "pdf", "yaml", "yml", "otf", "ttf", "zip"]]], ["type", "l"]]}], failed: query failed: synchronization failed: root dir was removed or is inaccessible
+2025-04-16T09:49:23,961: [client=13:stm=1646431395424:pid=0] path C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules is on filesystem type NTFS
+2025-04-16T09:49:23,961: [client=13:stm=1646431395424:pid=0] root C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules using watcher mechanism win32 (auto was requested)
+2025-04-16T09:49:24,518: [io 1646428607920 C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules] PERF: {"start_time": 1744786163.9624851, "version": "4.9.4", "description": "full-crawl", "meta": {"root": {"path": "C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules", "watcher": "win32", "recrawl_count": 0, "case_sensitive": false}}, "pid": 33140, "elapsed_time": 0.55618100000000004}
+2025-04-16T09:49:24,518: [io 1646428607920 C:/Program Files/Mendix/10.18.1.55792/modeler/tools/node/node_modules] crawl complete

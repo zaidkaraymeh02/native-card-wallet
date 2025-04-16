@@ -1,16 +1,10 @@
 Initialized native services in: C:\Users\zf_karaymeh\.gradle\native
 Initialized jansi services in: C:\Users\zf_karaymeh\.gradle\native
-Removing 1 daemon stop events from registry
-Starting a Gradle Daemon (subsequent builds will be faster)
-Starting process 'Gradle build daemon'. Working directory: C:\Users\zf_karaymeh\.gradle\daemon\8.13 Command: C:\Program Files\Eclipse Adoptium\jdk-11.0.14.101-hotspot\bin\java.exe --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -XX:MaxMetaspaceSize=384m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant -cp C:\Gradle\gradle-8.13\lib\gradle-daemon-main-8.13.jar -javaagent:C:\Gradle\gradle-8.13\lib\agents\gradle-instrumentation-agent-8.13.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.13
-Successfully started process 'Gradle build daemon'
-An attempt to start the daemon took 5.271 secs.
-The client will now receive all logging from the daemon (pid: 26052). The daemon log file: C:\Users\zf_karaymeh\.gradle\daemon\8.13\daemon-26052.out.log
-Starting build in new daemon [memory: 512 MiB]
+The client will now receive all logging from the daemon (pid: 3144). The daemon log file: C:\Users\zf_karaymeh\.gradle\daemon\8.13\daemon-3144.out.log
+Starting 6th build in daemon [uptime: 25 mins 24.138 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 24% of 384 MiB]
 Using 32 worker leases.
-Received JVM installation metadata from 'C:\Program Files\Eclipse Adoptium\jdk-11.0.14.101-hotspot': {JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-11.0.14.101-hotspot, JAVA_VERSION=11.0.14.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=11.0.14.1+1, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=11.0.14.1+1, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Now considering [C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment, C:\Users\zf_karaymeh\Mendix\KHCB_Retail_Platform-feature_cards\deployment] as hierarchies to watch
 Watching the file system is configured to be enabled if available
-Now considering [C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment] as hierarchies to watch
 File system watching is active
 Starting Build
 Settings evaluated using settings file 'C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment\settings.gradle'.
@@ -27,39 +21,39 @@ Selected primary task 'deploy' from project :
 Tasks to be executed: [task ':clean-excluded-jars', task ':copyDeploymentArtifacts', task ':copyLibs', task ':copyResources', task ':unzipDataSnapshot', task ':deploy']
 Tasks that were excluded: []
 Resolve mutations for :clean-excluded-jars (Thread[Execution worker,5,main]) started.
-:clean-excluded-jars (Thread[included builds,5,main]) started.
-destroyer locations for task group 0 (Thread[Execution worker,5,main]) started.
+:clean-excluded-jars (Thread[Execution worker Thread 18,5,main]) started.
+destroyer locations for task group 0 (Thread[Execution worker Thread 4,5,main]) started.
 
 > Task :clean-excluded-jars UP-TO-DATE
 Caching disabled for task ':clean-excluded-jars' because:
   Build cache is disabled
 Task ':clean-excluded-jars' is not up-to-date because:
   Task has not declared any outputs despite executing actions.
-Resolve mutations for :copyDeploymentArtifacts (Thread[included builds,5,main]) started.
-:copyDeploymentArtifacts (Thread[included builds,5,main]) started.
+Resolve mutations for :copyDeploymentArtifacts (Thread[Execution worker Thread 18,5,main]) started.
+:copyDeploymentArtifacts (Thread[Execution worker Thread 18,5,main]) started.
 
 > Task :copyDeploymentArtifacts
 Caching disabled for task ':copyDeploymentArtifacts' because:
   Build cache is disabled
 Task ':copyDeploymentArtifacts' is not up-to-date because:
   Task has not declared any outputs despite executing actions.
-Resolve mutations for :copyLibs (Thread[included builds,5,main]) started.
-:copyLibs (Thread[included builds,5,main]) started.
+Resolve mutations for :copyLibs (Thread[Execution worker Thread 18,5,main]) started.
+:copyLibs (Thread[Execution worker Thread 18,5,main]) started.
 
 > Task :copyLibs NO-SOURCE
 Skipping task ':copyLibs' as it has no source files and no previous output files.
-Resolve mutations for :copyResources (Thread[included builds,5,main]) started.
-:copyResources (Thread[included builds,5,main]) started.
+Resolve mutations for :copyResources (Thread[Execution worker Thread 18,5,main]) started.
+:copyResources (Thread[Execution worker Thread 18,5,main]) started.
 
 > Task :copyResources NO-SOURCE
 Skipping task ':copyResources' as it has no source files and no previous output files.
-Resolve mutations for :unzipDataSnapshot (Thread[included builds,5,main]) started.
-:unzipDataSnapshot (Thread[included builds,5,main]) started.
+Resolve mutations for :unzipDataSnapshot (Thread[Execution worker Thread 18,5,main]) started.
+:unzipDataSnapshot (Thread[Execution worker Thread 18,5,main]) started.
 
 > Task :unzipDataSnapshot SKIPPED
 Skipping task ':unzipDataSnapshot' as task onlyIf 'Task is enabled' is false.
-Resolve mutations for :deploy (Thread[included builds,5,main]) started.
-:deploy (Thread[included builds,5,main]) started.
+Resolve mutations for :deploy (Thread[Execution worker Thread 18,5,main]) started.
+:deploy (Thread[Execution worker Thread 18,5,main]) started.
 
 > Task :deploy
 Skipping task ':deploy' as it has no actions.
@@ -72,9 +66,12 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 8s
+BUILD SUCCESSFUL in 1s
 2 actionable tasks: 1 executed, 1 up-to-date
-Watched directory hierarchies: []
+Watched directory hierarchies: [C:\Users\zf_karaymeh\Mendix\KHCB_Retail_Platform-feature_cards\deployment]
+VCS Checkout Cache (C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment\.gradle\vcs-1) removing files not accessed on or after Wed Apr 09 09:49:11 AST 2025.
+VCS Checkout Cache (C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment\.gradle\vcs-1) cleanup deleted 0 files/directories.
+VCS Checkout Cache (C:\Users\zf_karaymeh\Projects\nativeCardWallet\testProject\deployment\.gradle\vcs-1) cleaned up in 0.001 secs.
 
 
 

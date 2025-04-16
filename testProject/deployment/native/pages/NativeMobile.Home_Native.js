@@ -27,15 +27,15 @@ import NativeMobile$Image_collection$Card_Infinite$png from "C:/Users/zf_karayme
 const { $Container, $khaleeji_nativecardwallet_NativeCardWallet, $ConditionalVisibilityWrapper, $DataView, $CheckBox, $TextBox, $Button } = asPluginWidgets({ Container, khaleeji_nativecardwallet_NativeCardWallet, ConditionalVisibilityWrapper, DataView, CheckBox, TextBox, Button });
 
 const placeholder$Main = () => [
-    <$Container key="p5.NativeMobile.Home_Native.container5"
-        $widgetId="p5.NativeMobile.Home_Native.container5"
+    <$Container key="p2.NativeMobile.Home_Native.container5"
+        $widgetId="p2.NativeMobile.Home_Native.container5"
         style={NativeStyleProperty({
             "styles": [ styles.Container, styles.flexMain, styles.alignChildrenCenter, styles.justifyContentCenter, styles.spacingInnerLeftMedium, styles.spacingInnerRightMedium, styles.backgroundPrimary ]
         })}
         onClick={undefined}
         content={[
-            <$khaleeji_nativecardwallet_NativeCardWallet key="p5.NativeMobile.Home_Native.nativeCardWallet1"
-                $widgetId="p5.NativeMobile.Home_Native.nativeCardWallet1"
+            <$khaleeji_nativecardwallet_NativeCardWallet key="p2.NativeMobile.Home_Native.nativeCardWallet1"
+                $widgetId="p2.NativeMobile.Home_Native.nativeCardWallet1"
                 yourName={""}
                 cardImage={NativeStaticImageProperty({
                     "image": NativeMobile$Image_collection$Card_Infinite$png
@@ -51,45 +51,45 @@ const placeholder$Main = () => [
                 })}
                 data={NanoflowObjectListProperty({
                     "argMap": {},
-                    "dataSourceId": "p5.4",
+                    "dataSourceId": "p2.4",
                     "entity": "NativeMobile.Card",
                     "scope": "$CardContext",
                     "source": { "nanoflow": () => require("C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native/nanoflows/NativeMobile.DS_GetCards").DS_GetCards }
                 })}
                 cardContext={NanoflowObjectListProperty({
                     "argMap": { "CardContext": { "widget": "$CardContext", "source": "object" } },
-                    "dataSourceId": "p5.5",
+                    "dataSourceId": "p2.5",
                     "entity": "NativeMobile.CardContext",
                     "scope": "$CardContext",
                     "source": { "nanoflow": () => require("C:/Users/zf_karaymeh/Projects/nativeCardWallet/testProject/deployment/native/nanoflows/NativeMobile.DS_GetCardContext").DS_GetCardContext }
                 })}
                 content={[
-                    <$ConditionalVisibilityWrapper key="p5.NativeMobile.Home_Native.dataView1$visibility"
-                        $widgetId="p5.NativeMobile.Home_Native.dataView1$visibility"
+                    <$ConditionalVisibilityWrapper key="p2.NativeMobile.Home_Native.dataView1$visibility"
+                        $widgetId="p2.NativeMobile.Home_Native.dataView1$visibility"
                         visible={ExpressionProperty({
                             "expression": { "expr": { "type": "variable", "variable": "CardContext", "path": "IsCardSelected" }, "args": { "CardContext": { "widget": "$CardContext", "source": "object" } } }
                         })}
                         contents={[
-                            <$DataView key="p5.NativeMobile.Home_Native.dataView1"
-                                $widgetId="p5.NativeMobile.Home_Native.dataView1"
+                            <$DataView key="p2.NativeMobile.Home_Native.dataView1"
+                                $widgetId="p2.NativeMobile.Home_Native.dataView1"
                                 style={NativeStyleProperty({
                                     "styles": [ styles.DataView ]
                                 })}
                                 object={AssociationObjectProperty({
-                                    "dataSourceId": "p5.9",
+                                    "dataSourceId": "p2.9",
                                     "scope": "$CardContext",
                                     "editable": true
                                 })}
                                 content={[
-                                    <$CheckBox key="p5.NativeMobile.Home_Native.checkBox1"
-                                        $widgetId="p5.NativeMobile.Home_Native.checkBox1"
+                                    <$CheckBox key="p2.NativeMobile.Home_Native.checkBox1"
+                                        $widgetId="p2.NativeMobile.Home_Native.checkBox1"
                                         style={NativeStyleProperty({
                                             "styles": [ styles.CheckBox, styles.CheckBoxVertical ]
                                         })}
                                         formOrientation={"vertical"}
                                         labelWidth={0}
                                         value={AttributeProperty({
-                                            "scope": "p5.NativeMobile.Home_Native.dataView1",
+                                            "scope": "p2.NativeMobile.Home_Native.dataView1",
                                             "path": "",
                                             "entity": "NativeMobile.CardContext",
                                             "attribute": "IsCardSelected",
@@ -114,8 +114,8 @@ const placeholder$Main = () => [
                                             })
                                         ])}
                                         accessible={true} />,
-                                    <$TextBox key="p5.NativeMobile.Home_Native.textBox1"
-                                        $widgetId="p5.NativeMobile.Home_Native.textBox1"
+                                    <$TextBox key="p2.NativeMobile.Home_Native.textBox1"
+                                        $widgetId="p2.NativeMobile.Home_Native.textBox1"
                                         style={NativeStyleProperty({
                                             "styles": [ styles.TextBox, styles.TextBoxVertical ]
                                         })}
@@ -124,7 +124,7 @@ const placeholder$Main = () => [
                                         formOrientation={"vertical"}
                                         labelWidth={0}
                                         inputValue={AttributeProperty({
-                                            "scope": "p5.NativeMobile.Home_Native.dataView1",
+                                            "scope": "p2.NativeMobile.Home_Native.dataView1",
                                             "path": "",
                                             "entity": "NativeMobile.CardContext",
                                             "attribute": "SelectedCardIndex",
@@ -166,8 +166,8 @@ const placeholder$Main = () => [
                                             })
                                         ])}
                                         accessible={true} />,
-                                    <$Button key="p5.NativeMobile.Home_Native.actionButton1"
-                                        $widgetId="p5.NativeMobile.Home_Native.actionButton1"
+                                    <$Button key="p2.NativeMobile.Home_Native.actionButton1"
+                                        $widgetId="p2.NativeMobile.Home_Native.actionButton1"
                                         style={NativeStyleProperty({
                                             "styles": [ styles.ActionButton ]
                                         })}
@@ -178,7 +178,7 @@ const placeholder$Main = () => [
                                         ])}
                                         icon={undefined}
                                         onClick={ActionProperty({
-                                            "action": { "type": "saveChanges", "argMap": { "$object": { "widget": "p5.NativeMobile.Home_Native.dataView1", "source": "object" } }, "config": { "operationId": "oi9tkL81ZU6asiWrsYOfoQ", "closePage": true }, "disabledDuringExecution": true }
+                                            "action": { "type": "saveChanges", "argMap": { "$object": { "widget": "p2.NativeMobile.Home_Native.dataView1", "source": "object" } }, "config": { "operationId": "J/0iC+hsZ0qyAhBI/EE0JA", "closePage": true }, "disabledDuringExecution": true }
                                         })}
                                         screenReaderCaption={t([
                                             ExpressionProperty({
@@ -191,8 +191,8 @@ const placeholder$Main = () => [
                                             })
                                         ])}
                                         accessible={true} />,
-                                    <$Button key="p5.NativeMobile.Home_Native.actionButton2"
-                                        $widgetId="p5.NativeMobile.Home_Native.actionButton2"
+                                    <$Button key="p2.NativeMobile.Home_Native.actionButton2"
+                                        $widgetId="p2.NativeMobile.Home_Native.actionButton2"
                                         style={NativeStyleProperty({
                                             "styles": [ styles.ActionButton ]
                                         })}
@@ -203,7 +203,7 @@ const placeholder$Main = () => [
                                         ])}
                                         icon={undefined}
                                         onClick={ActionProperty({
-                                            "action": { "type": "cancelChanges", "argMap": {}, "config": { "operationId": "StuzkJ4sVUKUzeldx6n9qw", "closePage": true }, "disabledDuringExecution": true }
+                                            "action": { "type": "cancelChanges", "argMap": {}, "config": { "operationId": "EvjA6JFtAkqwi9T/PDgaIA", "closePage": true }, "disabledDuringExecution": true }
                                         })}
                                         screenReaderCaption={t([
                                             ExpressionProperty({
@@ -218,26 +218,26 @@ const placeholder$Main = () => [
                                         accessible={true} />
                                 ]} />
                         ]} />,
-                    <$DataView key="p5.NativeMobile.Home_Native.dataView2"
-                        $widgetId="p5.NativeMobile.Home_Native.dataView2"
+                    <$DataView key="p2.NativeMobile.Home_Native.dataView2"
+                        $widgetId="p2.NativeMobile.Home_Native.dataView2"
                         style={NativeStyleProperty({
                             "styles": [ styles.DataView ]
                         })}
                         object={AssociationObjectProperty({
-                            "dataSourceId": "p5.22",
+                            "dataSourceId": "p2.22",
                             "scope": "$CardContext",
                             "editable": true
                         })}
                         content={[
-                            <$CheckBox key="p5.NativeMobile.Home_Native.checkBox2"
-                                $widgetId="p5.NativeMobile.Home_Native.checkBox2"
+                            <$CheckBox key="p2.NativeMobile.Home_Native.checkBox2"
+                                $widgetId="p2.NativeMobile.Home_Native.checkBox2"
                                 style={NativeStyleProperty({
                                     "styles": [ styles.CheckBox, styles.CheckBoxVertical ]
                                 })}
                                 formOrientation={"vertical"}
                                 labelWidth={0}
                                 value={AttributeProperty({
-                                    "scope": "p5.NativeMobile.Home_Native.dataView2",
+                                    "scope": "p2.NativeMobile.Home_Native.dataView2",
                                     "path": "",
                                     "entity": "NativeMobile.CardContext",
                                     "attribute": "IsCardSelected",
@@ -262,8 +262,8 @@ const placeholder$Main = () => [
                                     })
                                 ])}
                                 accessible={true} />,
-                            <$TextBox key="p5.NativeMobile.Home_Native.textBox2"
-                                $widgetId="p5.NativeMobile.Home_Native.textBox2"
+                            <$TextBox key="p2.NativeMobile.Home_Native.textBox2"
+                                $widgetId="p2.NativeMobile.Home_Native.textBox2"
                                 style={NativeStyleProperty({
                                     "styles": [ styles.TextBox, styles.TextBoxVertical ]
                                 })}
@@ -272,7 +272,7 @@ const placeholder$Main = () => [
                                 formOrientation={"vertical"}
                                 labelWidth={0}
                                 inputValue={AttributeProperty({
-                                    "scope": "p5.NativeMobile.Home_Native.dataView2",
+                                    "scope": "p2.NativeMobile.Home_Native.dataView2",
                                     "path": "",
                                     "entity": "NativeMobile.CardContext",
                                     "attribute": "SelectedCardIndex",
@@ -314,8 +314,8 @@ const placeholder$Main = () => [
                                     })
                                 ])}
                                 accessible={true} />,
-                            <$Button key="p5.NativeMobile.Home_Native.actionButton3"
-                                $widgetId="p5.NativeMobile.Home_Native.actionButton3"
+                            <$Button key="p2.NativeMobile.Home_Native.actionButton3"
+                                $widgetId="p2.NativeMobile.Home_Native.actionButton3"
                                 style={NativeStyleProperty({
                                     "styles": [ styles.ActionButton ]
                                 })}
@@ -326,7 +326,7 @@ const placeholder$Main = () => [
                                 ])}
                                 icon={undefined}
                                 onClick={ActionProperty({
-                                    "action": { "type": "saveChanges", "argMap": { "$object": { "widget": "p5.NativeMobile.Home_Native.dataView2", "source": "object" } }, "config": { "operationId": "CHjnfzHtWU+1gH26fWu5pg", "closePage": true }, "disabledDuringExecution": true }
+                                    "action": { "type": "saveChanges", "argMap": { "$object": { "widget": "p2.NativeMobile.Home_Native.dataView2", "source": "object" } }, "config": { "operationId": "9dFXbcDRoU6RKRwLzsyDpg", "closePage": true }, "disabledDuringExecution": true }
                                 })}
                                 screenReaderCaption={t([
                                     ExpressionProperty({
@@ -339,8 +339,8 @@ const placeholder$Main = () => [
                                     })
                                 ])}
                                 accessible={true} />,
-                            <$Button key="p5.NativeMobile.Home_Native.actionButton4"
-                                $widgetId="p5.NativeMobile.Home_Native.actionButton4"
+                            <$Button key="p2.NativeMobile.Home_Native.actionButton4"
+                                $widgetId="p2.NativeMobile.Home_Native.actionButton4"
                                 style={NativeStyleProperty({
                                     "styles": [ styles.ActionButton ]
                                 })}
@@ -351,7 +351,7 @@ const placeholder$Main = () => [
                                 ])}
                                 icon={undefined}
                                 onClick={ActionProperty({
-                                    "action": { "type": "cancelChanges", "argMap": {}, "config": { "operationId": "5H7B4j3aOEGl5gEMtio6wQ", "closePage": true }, "disabledDuringExecution": true }
+                                    "action": { "type": "cancelChanges", "argMap": {}, "config": { "operationId": "yBEZdC9ypkyXeDikfwhXmg", "closePage": true }, "disabledDuringExecution": true }
                                 })}
                                 screenReaderCaption={t([
                                     ExpressionProperty({
