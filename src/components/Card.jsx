@@ -8,7 +8,7 @@ function clamp(value, min, max) {
 }
   
 
-export function  Card ({ card, index, scrollY, activeCardIndex, onCardClick })  {
+export function  Card ({ card, index, scrollY, activeCardIndex, onCardClick, buttonAction })  {
   const [cardHeight, setCardHeight] = useState(0);
   const { height: screenHeight } = useWindowDimensions();
   const translateY = new Animated.Value(0);
@@ -52,7 +52,15 @@ export function  Card ({ card, index, scrollY, activeCardIndex, onCardClick })  
         // Wait for 2 seconds
         // console.log("onCardClickProp", onCardClick)
     // setTimeout(() => {onCardClick.execute();}, 2000);
-    setTimeout(() => {onCardClick({"activeCardIndex": activeCardIndex, "state": true, "position": -(screenHeight - cardHeight - 600 + (index * 1.6) * cardHeight * 0.3)});}, 2000);
+    const AsyncStorage =  (await import('@react-native-async-storage/async-storage')).default;
+    setTimeout(async () => {
+        onCardClick({"activeCardIndex": activeCardIndex, "state": true, "position": -(screenHeight - cardHeight - 600 + (index * 1.6) * cardHeight * 0.3)});
+        console.log("buttonAction1", buttonAction)
+        console.log("buttonAction1", buttonAction.execute.toString())
+        console.dir(buttonAction.execute)
+        AsyncStorage.setItem('activeCardIndex', JSON.stringify(activeCardIndex._value));
+        buttonAction.execute();
+      }, 2000);
       // onCardClick();
         
     } else {

@@ -25,6 +25,7 @@
     "@mendix/pluggable-widgets-tools": "^10.15.0"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^2.0.0",
     "react-native-fast-image": "^8.6.3",
     "react-native-gesture-handler": "^2.14.0",
     "react-native-reanimated": "^3.6.2",

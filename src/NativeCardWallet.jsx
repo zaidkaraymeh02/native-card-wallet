@@ -8,6 +8,7 @@ export function NativeCardWallet(props) {
     console.log("PROPS", props)
     useEffect(() => {
         console.log("mydata", props.data)
+        console.log("loadedCardContext", props.cardContext)
     }, [props.data, props.cardContext, props.content])
     // const cards = props.datasource;
     // console.log("ITEMS", cards)
@@ -21,7 +22,9 @@ export function NativeCardWallet(props) {
                     <CardsList  content={props.content} onCardClick={props.buttonAction} items={props.data.items} cardImage={{
                         type: "staticImage", // Static image
                         image: props.cardImage.value,
-                    }} />
+                    }} 
+                    cardContext={props.cardContext.items[0]}
+                    />
                     : <Text>Loading...</Text>
                  }
         </GestureHandlerRootView>

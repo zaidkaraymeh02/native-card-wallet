@@ -29,8 +29,22 @@ export function CardsList(props) {
   const scrollY = useRef(new Animated.Value(0)).current;
   const maxScrollY = useRef(0);
 
-  const {items, content} = props;
+  const {items, content, cardContext} = props;
+
   console.log("ITEMS", items)
+  
+  console.log(`CARD CONTEXT 3:' ${JSON.stringify(cardContext)}`);
+  console.log("CARD CONTEXT 4:");
+  
+console.log(Object.keys(cardContext));
+
+  console.dir(cardContext);
+  for (const key in cardContext) {
+    if (cardContext.hasOwnProperty(key)) {
+      console.log(`CARD CONTEXT 2: ${key}: ${cardContext[key]}`);
+    }
+  }
+  
 
   const panResponder = useRef(
     PanResponder.create({
@@ -97,6 +111,7 @@ export function CardsList(props) {
       items.map((card, index) => (
         <Card
           onCardClick={setIsCardSelected}
+          buttonAction={props.onCardClick}
           key={index}
           card={props.cardImage.image}
           index={index}
