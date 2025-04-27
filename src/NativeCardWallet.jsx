@@ -26,7 +26,8 @@ export function NativeCardWallet(props) {
                     cardContext={props.cardContext.items[0]}
                     />
                     : <Text>Loading...</Text>
-                 }
+                }
+                {/* <Text>Loading...</Text> */}
         </GestureHandlerRootView>
 
     )

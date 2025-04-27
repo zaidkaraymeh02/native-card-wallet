@@ -31,19 +31,19 @@ export function CardsList(props) {
 
   const {items, content, cardContext} = props;
 
-  console.log("ITEMS", items)
+//   console.log("ITEMS", items)
   
-  console.log(`CARD CONTEXT 3:' ${JSON.stringify(cardContext)}`);
-  console.log("CARD CONTEXT 4:");
+//   console.log(`CARD CONTEXT 3:' ${JSON.stringify(cardContext)}`);
+//   console.log("CARD CONTEXT 4:");
   
-console.log(Object.keys(cardContext));
+// console.log(Object.keys(cardContext));
 
-  console.dir(cardContext);
-  for (const key in cardContext) {
-    if (cardContext.hasOwnProperty(key)) {
-      console.log(`CARD CONTEXT 2: ${key}: ${cardContext[key]}`);
-    }
-  }
+//   console.dir(cardContext);
+//   for (const key in cardContext) {
+//     if (cardContext.hasOwnProperty(key)) {
+//       console.log(`CARD CONTEXT 2: ${key}: ${cardContext[key]}`);
+//     }
+//   }
   
 
   const panResponder = useRef(
@@ -98,6 +98,7 @@ console.log(Object.keys(cardContext));
     {isCardSelected.state ? (
       <View>
         <Card
+          contextId={cardContext.id}
           onCardClick={setIsCardSelected}
           key={isCardSelected.activateCardIndex}
           card={props.cardImage.image}

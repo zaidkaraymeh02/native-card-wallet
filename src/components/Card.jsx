@@ -1,14 +1,22 @@
 import React, { useEffect, useState, createElement } from 'react';
-import { Animated, Easing, StyleSheet, View, TouchableWithoutFeedback, useWindowDimensions } from 'react-native';
+import { Animated, Easing, StyleSheet, View, TouchableWithoutFeedback, useWindowDimensions, Text } from 'react-native';
 import FastImageComponent, { Source } from "react-native-fast-image";
+
+console.log('FastImageComponent:', FastImageComponent);
+console.log('typeof FastImageComponent:', typeof FastImageComponent);
+console.log('Animated:', Animated);
+console.log('Animated.createAnimatedComponent:', Animated.createAnimatedComponent);
+
 const AnimatedFastImage = Animated.createAnimatedComponent(FastImageComponent);
+
+
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
   
 
-export function  Card ({ card, index, scrollY, activeCardIndex, onCardClick, buttonAction })  {
+export function  Card ({ card, index, scrollY, activeCardIndex, onCardClick, buttonAction, contextId })  {
   const [cardHeight, setCardHeight] = useState(0);
   const { height: screenHeight } = useWindowDimensions();
   const translateY = new Animated.Value(0);
@@ -55,11 +63,16 @@ export function  Card ({ card, index, scrollY, activeCardIndex, onCardClick, but
     const AsyncStorage =  (await import('@react-native-async-storage/async-storage')).default;
     setTimeout(async () => {
         onCardClick({"activeCardIndex": activeCardIndex, "state": true, "position": -(screenHeight - cardHeight - 600 + (index * 1.6) * cardHeight * 0.3)});
-        console.log("buttonAction1", buttonAction)
-        console.log("buttonAction1", buttonAction.execute.toString())
-        console.dir(buttonAction.execute)
-        AsyncStorage.setItem('activeCardIndex', JSON.stringify(activeCardIndex._value));
-        buttonAction.execute();
+        // console.log("buttonAction1", buttonAction)
+        // console.log("buttonAction1", buttonAction.execute.toString())
+        // console.dir(buttonAction.execute)
+        AsyncStorage.setItem('activeCardIndex', JSON.stringify(contextId));
+        if (typeof buttonAction === 'function') {
+          buttonAction.execute();
+        } else {
+            console.warn('buttonAction is not a function:', buttonAction);
+        }
+        // buttonAction.execute();
       }, 2000);
       // onCardClick();
         
@@ -102,6 +115,7 @@ function handleTap() {
         />
       </View>
     </TouchableWithoutFeedback>
+      // <Text>Loading...</Text>
   );
 };
 
