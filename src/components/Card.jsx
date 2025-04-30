@@ -16,23 +16,25 @@ function clamp(value, min, max) {
 }
   
 
-export function  Card ({ card, index, scrollY, activeCardIndex, onCardClick, buttonAction, contextId })  {
+export function Card({ card, index, scrollY, activeCardIndex, onCardClick, buttonAction, contextId }) {
   const [cardHeight, setCardHeight] = useState(0);
   const { height: screenHeight } = useWindowDimensions();
-  const translateY = new Animated.Value(0);
+  const translateY = useState(new Animated.Value(0))[0];
 
   const promiseFunction = () => {
     return new Promise((resolve) => {
+      const targetY = screenHeight / 20; // Fixed place you want cards to land
+      const currentTop = index * 80 + 90;     // Where the card is currently stacked
+      const deltaY = -currentTop; // How much to move
+  
       Animated.timing(translateY, {
-        toValue: index > 6 ? -((index * 120 * 0.46) + 90) : -((index * 120 * 0.45) + 100),
-        duration: 500,
+        toValue: deltaY,
+        duration: 700,
         easing: Easing.out(Easing.quad),
         useNativeDriver: true,
-    }).start();
-         
-    resolve(true);
+      }).start(() => resolve(true));
     });
-  }
+  };
 
   useEffect(() => {
     const listenerId = scrollY.addListener(({ value }) => {
@@ -46,7 +48,7 @@ export function  Card ({ card, index, scrollY, activeCardIndex, onCardClick, but
   }, [scrollY, cardHeight]);
 
   useEffect(() => {
-    const listenerId = activeCardIndex.addListener(async({ value }) => {
+    const listenerId = activeCardIndex.addListener(async ({ value }) => {
       if (value === -1) {
         Animated.timing(translateY, {
           toValue: clamp(-scrollY._value, -index * cardHeight, 0),
@@ -54,34 +56,20 @@ export function  Card ({ card, index, scrollY, activeCardIndex, onCardClick, but
           easing: Easing.out(Easing.quad),
           useNativeDriver: true,
         }).start();
-    } else if (value === index) {
-        // await 
+      } else if (value === index) {
+        const AsyncStorage = (await import('@react-native-async-storage/async-storage')).default;
         await promiseFunction();
-        // Wait for 2 seconds
-        // console.log("onCardClickProp", onCardClick)
-    // setTimeout(() => {onCardClick.execute();}, 2000);
-    const AsyncStorage =  (await import('@react-native-async-storage/async-storage')).default;
-    setTimeout(async () => {
-        onCardClick({"activeCardIndex": activeCardIndex, "state": true, "position": -(screenHeight - cardHeight - 600 + (index * 1.6) * cardHeight * 0.3)});
-        // console.log("buttonAction1", buttonAction)
-        // console.log("buttonAction1", buttonAction.execute.toString())
-        // console.dir(buttonAction.execute)
-        AsyncStorage.setItem('activeCardIndex', JSON.stringify(contextId));
-        if (typeof buttonAction === 'function') {
+        setTimeout(async () => {
+          onCardClick({ activeCardIndex: activeCardIndex, state: true, position: -(index * 80 + 90) });
+          AsyncStorage.setItem('activeCardIndex', JSON.stringify(contextId));
           buttonAction.execute();
-        } else {
-            console.warn('buttonAction is not a function:', buttonAction);
-        }
-        // buttonAction.execute();
-      }, 2000);
-      // onCardClick();
-        
-    } else {
+        }, 200);
+      } else {
         await Animated.timing(translateY, {
-            toValue: -index * cardHeight * 0.3 + screenHeight * 0.9,
-            duration: 500,
-            easing: Easing.out(Easing.quad),
-            useNativeDriver: true,
+          toValue: -index * cardHeight * 0.3 + screenHeight * 0.9,
+          duration: 500,
+          easing: Easing.out(Easing.quad),
+          useNativeDriver: true,
         }).start();
       }
     });
@@ -91,51 +79,41 @@ export function  Card ({ card, index, scrollY, activeCardIndex, onCardClick, but
     };
   }, [cardHeight]);
 
-  
-function handleTap() {
-   if (activeCardIndex._value === -1) {
-     activeCardIndex.setValue(activeCardIndex._value === -1 ? index : -1);
-   } else {
-     // Do nothing
-   }
+  function handleTap() {
+    if (activeCardIndex._value === -1) {
+      activeCardIndex.setValue(index);
+    }
   }
-  
 
   return (
-    <TouchableWithoutFeedback onPress={handleTap} >
-      <View  >
+    <TouchableWithoutFeedback onPress={handleTap}>
+      <Animated.View style={[
+        styles.cardContainer,
+        { top: index * 80, transform: [{ translateY }] } // ← stacking by index!
+      ]}>
         <AnimatedFastImage
           source={card}
-          onLayout={(event) =>
-            setCardHeight(event.nativeEvent.layout.height + 10)
-          }
-          style={[styles.image,  { transform: [{ translateY }] }]}
+          onLayout={(event) => setCardHeight(event.nativeEvent.layout.height)}
+          style={styles.image}
           resizeMode={FastImageComponent.resizeMode.stretch}
-
         />
-      </View>
+      </Animated.View>
     </TouchableWithoutFeedback>
-      // <Text>Loading...</Text>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  container: {
-    shadowColor: '#B387DF',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    width: '100%',
-    overflow: 'hidden'
+  cardContainer: {
+    position: 'absolute', // absolute stacking
+    left: 0,
+    right: 0,
+    alignItems: 'center',
   },
   image: {
-    marginTop: -165,
-    width: '100%',
-    height: 'auto',
+    width: '90%',
     aspectRatio: 343 / 218,
     marginVertical: 5,
-    // resizeMode: 'contain',
-    // objectFit: 'contain',
   },
 });
+
+export default Card;

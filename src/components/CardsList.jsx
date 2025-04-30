@@ -76,7 +76,7 @@ export function CardsList(props) {
     <View
     // {...panResponder.panHandlers}
       onLayout={onLayout}
-      style={{ padding: 10, marginTop: 165 }}
+      style={{ padding: 10 }}
     >
     {/* <Text>{JSON.stringify(props, null, 2)}</Text> */}
 
@@ -106,7 +106,9 @@ export function CardsList(props) {
           scrollY={scrollY}
           activeCardIndex={activeCardIndex}
         />
-          {content}
+          <View style={{marginTop:250}}> 
+            {content}
+          </View>
         </View>
     ) : items ? (
       items.map((card, index) => (
